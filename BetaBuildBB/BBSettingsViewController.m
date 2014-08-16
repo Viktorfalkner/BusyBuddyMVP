@@ -75,6 +75,47 @@
     } else if (sender.on == NO) {
         [self unlinkTwitter];
     }
+}
+#pragma mark - Social Media Methods
+- (void)linkTwitter
+{
+    if (![PFTwitterUtils isLinkedWithUser:self.currentUser]) {
+        [PFTwitterUtils linkUser:self.currentUser block:^(BOOL succeeded, NSError *error) {
+            if ([PFTwitterUtils isLinkedWithUser:self.currentUser]) {
+                NSLog(@"Woohoo, user logged in with Twitter!");
+            }
+        }];
+    }
+}
+
+- (void)linkFacebook
+{
+    if (![PFFacebookUtils isLinkedWithUser:self.currentUser]) {
+        [PFFacebookUtils linkUser:self.currentUser permissions:nil block:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+                NSLog(@"Woohoo, user logged in with Facebook!");
+            }
+        }];
+    }
+}
+
+- (void)unlinkTwitter
+{
+    [PFTwitterUtils unlinkUserInBackground:self.currentUser block:^(BOOL succeeded, NSError *error) {
+        if (!error && succeeded) {
+            NSLog(@"The user is no longer associated with their Twitter account.");
+        }
+    }];
+}
+
+- (void)unlinkFacebook
+{
+    [PFFacebookUtils unlinkUserInBackground:self.currentUser block:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            NSLog(@"The user is no longer associated with their Facebook account.");
+        }
+    }];
+}
 
 
 /*
