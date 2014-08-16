@@ -23,7 +23,6 @@
 		3B92334F19685E050037BA47 /* BetaBuildBBTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B92334E19685E050037BA47 /* BetaBuildBBTests.m */; };
 		3B92335919685E830037BA47 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B92335819685E830037BA47 /* Storyboard.storyboard */; };
 		3B92335C196861300037BA47 /* BBLoginRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B92335B196861300037BA47 /* BBLoginRootViewController.m */; };
-		3BD4834F1968FDFF00299405 /* BeeMapIcon32.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BD4834E1968FDFF00299405 /* BeeMapIcon32.png */; };
 		774C2AED197C7B9A006DCC87 /* BBLeftDrawerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 774C2AEC197C7B9A006DCC87 /* BBLeftDrawerTableViewController.m */; };
 		91E72CDBE84E42BDAC6F181B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E94057B3393E422194634168 /* libPods.a */; };
 		F870DB75197C762500E1A779 /* BBRightDrawerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F870DB74197C762500E1A779 /* BBRightDrawerTableViewController.m */; };
@@ -61,7 +60,6 @@
 		3B92335819685E830037BA47 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Storyboard.storyboard; path = ../Storyboard.storyboard; sourceTree = "<group>"; };
 		3B92335A196861300037BA47 /* BBLoginRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBLoginRootViewController.h; sourceTree = "<group>"; };
 		3B92335B196861300037BA47 /* BBLoginRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBLoginRootViewController.m; sourceTree = "<group>"; };
-		3BD4834E1968FDFF00299405 /* BeeMapIcon32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BeeMapIcon32.png; sourceTree = "<group>"; };
 		774C2AEB197C7B9A006DCC87 /* BBLeftDrawerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBLeftDrawerTableViewController.h; sourceTree = "<group>"; };
 		774C2AEC197C7B9A006DCC87 /* BBLeftDrawerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBLeftDrawerTableViewController.m; sourceTree = "<group>"; };
 		B2FBE3E1967446B38889EE65 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
@@ -190,7 +188,6 @@
 		3BD4834D1968FDE300299405 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3BD4834E1968FDFF00299405 /* BeeMapIcon32.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -275,7 +272,6 @@
 				3B92333419685E050037BA47 /* InfoPlist.strings in Resources */,
 				3B92333C19685E050037BA47 /* Images.xcassets in Resources */,
 				3B92335919685E830037BA47 /* Storyboard.storyboard in Resources */,
-				3BD4834F1968FDFF00299405 /* BeeMapIcon32.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -57,7 +57,7 @@
     self.rightBarButtonItem = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(rightDrawerButtonPress:)];
     [self.rightBarButtonItem setMenuButtonColor:[UIColor yellowColor] forState:UIControlStateNormal];
     
-//    self.navigationItem.rightBarButtonItem  = self.rightBarButtonItem;
+    self.navigationItem.rightBarButtonItem  = self.rightBarButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
