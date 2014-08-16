@@ -8,6 +8,7 @@
 
 #import "BBLoginRootViewController.h"
 #import "BBSettingsViewController.h"
+#import "BBDataStore.h"
 
 @interface BBLoginRootViewController ()
 @property (weak, nonatomic) IBOutlet UITabBar *bottomTabBar;
@@ -31,6 +32,11 @@
 {
     [super viewDidLoad];
     self.bottomTabBar.delegate = self;
+    self.dataStore = [BBDataStore sharedDataStore];
+    
+    [self.dataStore fetchUniversitiesFromParseWithCompletion:^{
+        NSLog(@"%@", self.dataStore.universitiesArray);
+    }];
     
  
     
