@@ -7,6 +7,7 @@
 //
 
 #import "BBLoginRootViewController.h"
+#import "BBSettingsViewController.h"
 
 @interface BBLoginRootViewController ()
 - (IBAction)logout:(id)sender;
@@ -28,24 +29,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self checkForLoggedInUser];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-    if (![PFUser currentUser]) {
-        
-        PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
-        [logInViewController setDelegate:self];
-        
-        PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
-        [signUpViewController setDelegate:self];
-        
-        [logInViewController setSignUpController:signUpViewController];
-        
-        [self presentViewController:logInViewController animated:YES completion:NULL];
-    }
     
     //Left Drawer Button
     self.leftBarButtonItem = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
@@ -59,10 +49,37 @@
     
     self.navigationItem.rightBarButtonItem  = self.rightBarButtonItem;
 }
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.currentUser = [PFUser currentUser];
+
+    
+}
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+#pragma mark - STANDARD PARSE LOGIN METHODS
+- (void) checkForLoggedInUser
+{
+    if (![PFUser currentUser]) {
+        
+        PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
+        logInViewController.delegate = self;
+        logInViewController.facebookPermissions = [NSArray arrayWithObjects:@"email", nil];
+        logInViewController.fields = PFLogInFieldsDefault | PFLogInFieldsTwitter | PFLogInFieldsFacebook | PFLogInFieldsDismissButton;
+        
+        PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
+        signUpViewController.delegate = self;
+        
+        logInViewController.signUpController = signUpViewController;
+        
+        [self presentViewController:logInViewController animated:YES completion:NULL];
+    } else {
+        self.currentUser = [PFUser currentUser];
+    }
 }
 
 #pragma mark - PFLoginViewControllerDelegate
@@ -157,7 +174,17 @@
 
 - (IBAction)logout:(id)sender {
     [PFUser logOut];
-    [self viewDidAppear:YES];
+    [self checkForLoggedInUser];
 
+}
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"settingsSegue"]) {
+        BBSettingsViewController *nextVC = segue.destinationViewController;
+        
+        nextVC.currentUser = self.currentUser;
+        
+    }
+    
 }
 @end

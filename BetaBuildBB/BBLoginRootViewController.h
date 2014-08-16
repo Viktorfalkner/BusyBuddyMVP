@@ -12,6 +12,9 @@
 
 @interface BBLoginRootViewController : UIViewController <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
 
+
+@property (strong, nonatomic) PFUser *currentUser;
+
 @property (strong, nonatomic) MMDrawerBarButtonItem *leftBarButtonItem;
 @property (strong, nonatomic) MMDrawerBarButtonItem *rightBarButtonItem;
 

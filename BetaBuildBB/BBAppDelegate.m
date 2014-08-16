@@ -8,16 +8,20 @@
 
 #import "BBAppDelegate.h"
 #import "MMDrawerVisualState.h"
+#import "BBConstants.h"
 
 @implementation BBAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [self.window makeKeyAndVisible];
-    // BetaBuildBB App ID and Client ID
-    [Parse setApplicationId:@"7tNCkeRoWa6aKUk9Sqp7Ov2ysHkIaiTIhTcHjijr"
-                  clientKey:@"wr2k1cENCqWqBqNcwXcNmIF4UFl9iA69z55RnATj"];
+    [Parse setApplicationId:PARSE_APP_ID clientKey:PARSE_CLIENT_KEY];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    [PFFacebookUtils initializeFacebook];
+    
+    [PFTwitterUtils initializeWithConsumerKey:TWITTER_APP_ID
+                               consumerSecret:TWITTER_SECRET];
+    [self.window makeKeyAndVisible];
     
     self.centerDrawerController = (MMDrawerController *)self.window.rootViewController;
     [self.centerDrawerController setMaximumLeftDrawerWidth:280.0];
@@ -46,14 +50,21 @@
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
-
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    return [FBAppCall handleOpenURL:url
+                  sourceApplication:sourceApplication
+                        withSession:[PFFacebookUtils session]];
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    [FBAppCall handleDidBecomeActiveWithSession:[PFFacebookUtils session]];
 }
 
 @end
