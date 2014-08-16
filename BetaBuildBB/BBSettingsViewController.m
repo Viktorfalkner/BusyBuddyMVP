@@ -7,6 +7,7 @@
 //
 
 #import "BBSettingsViewController.h"
+#import "BBLoginRootViewController.h"
 
 @interface BBSettingsViewController ()
 @property (weak, nonatomic) IBOutlet UISwitch *facebookSwitch;
@@ -15,6 +16,15 @@
 @end
 
 @implementation BBSettingsViewController
+
+- (IBAction)logoutButton:(id)sender
+{
+    [PFUser logOut];
+ 
+    [self.navigationController popToRootViewControllerAnimated:YES];
+    
+    
+}
 
 
 

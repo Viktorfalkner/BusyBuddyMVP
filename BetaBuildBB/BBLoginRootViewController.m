@@ -10,7 +10,8 @@
 #import "BBSettingsViewController.h"
 
 @interface BBLoginRootViewController ()
-- (IBAction)logout:(id)sender;
+@property (weak, nonatomic) IBOutlet UITabBar *bottomTabBar;
+
 
 @end
 
@@ -29,7 +30,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self checkForLoggedInUser];
+    self.bottomTabBar.delegate = self;
+    
+ 
     
 }
 
@@ -47,12 +50,14 @@
     self.rightBarButtonItem = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(rightDrawerButtonPress:)];
     [self.rightBarButtonItem setMenuButtonColor:[UIColor yellowColor] forState:UIControlStateNormal];
     
+    
     self.navigationItem.rightBarButtonItem  = self.rightBarButtonItem;
 }
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     self.currentUser = [PFUser currentUser];
+    [self checkForLoggedInUser];
 
     
 }
@@ -172,11 +177,7 @@
     
 }
 
-- (IBAction)logout:(id)sender {
-    [PFUser logOut];
-    [self checkForLoggedInUser];
 
-}
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"settingsSegue"]) {
