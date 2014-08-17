@@ -110,6 +110,8 @@
     [self.mapOutlet addAnnotation:pointToAnnotate];
 
 }
+
+
 -(void)plotArrayOfMeetupsOnMap:(NSArray *)arrayToBePlotted
 {
     for (BBMeetup *meetup in arrayToBePlotted) {

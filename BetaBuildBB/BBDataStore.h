@@ -9,12 +9,16 @@
 #import <Foundation/Foundation.h>
 
 @class BBUniversity;
+@class BBMeetup;
 
 @interface BBDataStore : NSObject
 
 @property (strong, nonatomic) NSMutableArray *universitiesArray;
 @property (strong, nonatomic) NSMutableArray *universityCoursesArray;
 @property (strong, nonatomic) PFUser *currentUser;
+@property (strong, nonatomic) NSMutableArray *allMeetUpsArray;
+@property (strong, nonatomic) BBMeetup *currentUserMeetup;
+
 
 
 +(instancetype)sharedDataStore;
