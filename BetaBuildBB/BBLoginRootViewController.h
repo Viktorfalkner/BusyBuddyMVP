@@ -11,7 +11,10 @@
 #import "MMDrawerBarButtonItem.h"
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
+
 @class BBDataStore;
+@class BBMeetup;
+
 
 @interface BBLoginRootViewController : UIViewController <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, UITabBarDelegate, MKMapViewDelegate, CLLocationManagerDelegate>
 
@@ -27,5 +30,8 @@
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) CLLocation *currentLocation;
 
+
+-(void)plotLocationsOnMap:(BBMeetup *)meetUpToBePlotted;
+-(void)plotArrayOfMeetupsOnMap:(NSArray *)arrayToBePlotted;
 
 @end

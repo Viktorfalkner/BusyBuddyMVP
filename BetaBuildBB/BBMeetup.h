@@ -10,5 +10,13 @@
 
 @interface BBMeetup : NSObject
 
+@property (nonatomic) NSNumber *latitudeFloat;
+@property (nonatomic) NSNumber *longitudeFloat;
+@property (strong, nonatomic) NSString *meetupName;
+
+
+
+
+
 
 @end

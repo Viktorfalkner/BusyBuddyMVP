@@ -9,6 +9,7 @@
 #import "BBLoginRootViewController.h"
 #import "BBSettingsViewController.h"
 #import "BBDataStore.h"
+#import "BBMeetup.h"
 
 @interface BBLoginRootViewController ()
 @property (weak, nonatomic) IBOutlet MKMapView *mapOutlet;
@@ -94,6 +95,26 @@
     [self.mapOutlet setRegion:region animated:YES];
     
     
+}
+
+-(void)plotLocationsOnMap:(BBMeetup *)meetUpToBePlotted
+{
+    CGFloat latitudefloat = [meetUpToBePlotted.latitudeFloat floatValue];
+    CGFloat longitudeFloat = [meetUpToBePlotted.latitudeFloat floatValue];
+    
+    MKPointAnnotation *pointToAnnotate = [[MKPointAnnotation alloc]init];
+    
+    pointToAnnotate.coordinate = CLLocationCoordinate2DMake(latitudefloat, longitudeFloat);
+    pointToAnnotate.title = meetUpToBePlotted.meetupName;
+    
+    [self.mapOutlet addAnnotation:pointToAnnotate];
+
+}
+-(void)plotArrayOfMeetupsOnMap:(NSArray *)arrayToBePlotted
+{
+    for (BBMeetup *meetup in arrayToBePlotted) {
+        [self plotLocationsOnMap:meetup];
+    }
 }
 
 
