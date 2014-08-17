@@ -8,6 +8,8 @@
 
 #import "BBUniversityPickerViewController.h"
 #import "BBDataStore.h"
+#import "BBUniversity.h"
+#import "BBCoursePickerViewController.h"
 
 @interface BBUniversityPickerViewController ()
 @property (weak, nonatomic) IBOutlet UIPickerView *universityPicker;
@@ -32,24 +34,50 @@
     self.universityPicker.delegate = self;
     self.universityPicker.dataSource = self;
     
-    // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning
+#pragma mark -
+#pragma mark PickerView DataSource
+
+- (NSInteger)numberOfComponentsInPickerView:
+(UIPickerView *)pickerView
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    return 1;
 }
 
-/*
+- (NSInteger)pickerView:(UIPickerView *)pickerView
+numberOfRowsInComponent:(NSInteger)component
+{
+    return [self.dataStore.universitiesArray count];
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView
+             titleForRow:(NSInteger)row
+            forComponent:(NSInteger)component
+{
+    BBUniversity *university = self.dataStore.universitiesArray[row];
+    self.selectedUniversity = self.dataStore.universitiesArray[row];
+    return university.name;
+}
+
+#pragma mark -
+#pragma mark PickerView Delegate
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row
+      inComponent:(NSInteger)component
+{
+    self.selectedUniversity = self.dataStore.universitiesArray[row];
+}
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    BBCoursePickerViewController *newVC = segue.destinationViewController;
+    
+    if ([segue.identifier isEqualToString:@"universitySelected"]) {
+        newVC.selectedUniversity = self.selectedUniversity;
+    }
 }
-*/
 
 @end

@@ -31,6 +31,10 @@
 		77ACA46B19A01DC7004865B8 /* BBDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 77ACA46A19A01DC7004865B8 /* BBDataStore.m */; };
 		77ACA46F19A020AF004865B8 /* BBUniversityPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77ACA46E19A020AF004865B8 /* BBUniversityPickerViewController.m */; };
 		91E72CDBE84E42BDAC6F181B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E94057B3393E422194634168 /* libPods.a */; };
+		F83AA34719A02731006B49B6 /* BBCoursePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F83AA34619A02731006B49B6 /* BBCoursePickerViewController.m */; };
+		F83AA34A19A027B6006B49B6 /* BBCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = F83AA34919A027B6006B49B6 /* BBCourse.m */; };
+		F83AA35319A02F8A006B49B6 /* BBActivityPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F83AA35219A02F8A006B49B6 /* BBActivityPickerViewController.m */; };
+		F83AA35619A03223006B49B6 /* BBCreateMeetingNowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F83AA35519A03223006B49B6 /* BBCreateMeetingNowViewController.m */; };
 		F870DB75197C762500E1A779 /* BBRightDrawerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F870DB74197C762500E1A779 /* BBRightDrawerTableViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +86,14 @@
 		77ACA46E19A020AF004865B8 /* BBUniversityPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBUniversityPickerViewController.m; sourceTree = "<group>"; };
 		B2FBE3E1967446B38889EE65 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		E94057B3393E422194634168 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F83AA34519A02731006B49B6 /* BBCoursePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBCoursePickerViewController.h; sourceTree = "<group>"; };
+		F83AA34619A02731006B49B6 /* BBCoursePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBCoursePickerViewController.m; sourceTree = "<group>"; };
+		F83AA34819A027B6006B49B6 /* BBCourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBCourse.h; sourceTree = "<group>"; };
+		F83AA34919A027B6006B49B6 /* BBCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBCourse.m; sourceTree = "<group>"; };
+		F83AA35119A02F8A006B49B6 /* BBActivityPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBActivityPickerViewController.h; sourceTree = "<group>"; };
+		F83AA35219A02F8A006B49B6 /* BBActivityPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBActivityPickerViewController.m; sourceTree = "<group>"; };
+		F83AA35419A03223006B49B6 /* BBCreateMeetingNowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBCreateMeetingNowViewController.h; sourceTree = "<group>"; };
+		F83AA35519A03223006B49B6 /* BBCreateMeetingNowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBCreateMeetingNowViewController.m; sourceTree = "<group>"; };
 		F870DB73197C762500E1A779 /* BBRightDrawerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBRightDrawerTableViewController.h; sourceTree = "<group>"; };
 		F870DB74197C762500E1A779 /* BBRightDrawerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBRightDrawerTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -153,6 +165,7 @@
 				3B92335819685E830037BA47 /* Storyboard.storyboard */,
 				3B92333819685E050037BA47 /* BBAppDelegate.h */,
 				3B92333919685E050037BA47 /* BBAppDelegate.m */,
+				77ACA46C19A01DCD004865B8 /* Datastore */,
 				3B92335D196864F20037BA47 /* Controllers */,
 				3B92333B19685E050037BA47 /* Images.xcassets */,
 				3BD4834D1968FDE300299405 /* Resources */,
@@ -205,6 +218,12 @@
 				77ACA46019A00EFB004865B8 /* BBSettingsViewController.m */,
 				77ACA46D19A020AF004865B8 /* BBUniversityPickerViewController.h */,
 				77ACA46E19A020AF004865B8 /* BBUniversityPickerViewController.m */,
+				F83AA34519A02731006B49B6 /* BBCoursePickerViewController.h */,
+				F83AA34619A02731006B49B6 /* BBCoursePickerViewController.m */,
+				F83AA35119A02F8A006B49B6 /* BBActivityPickerViewController.h */,
+				F83AA35219A02F8A006B49B6 /* BBActivityPickerViewController.m */,
+				F83AA35419A03223006B49B6 /* BBCreateMeetingNowViewController.h */,
+				F83AA35519A03223006B49B6 /* BBCreateMeetingNowViewController.m */,
 				77ACA46519A01D4D004865B8 /* Model */,
 			);
 			name = Controllers;
@@ -220,11 +239,12 @@
 		77ACA46519A01D4D004865B8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F83AA34819A027B6006B49B6 /* BBCourse.h */,
+				F83AA34919A027B6006B49B6 /* BBCourse.m */,
 				77ACA46219A01D4A004865B8 /* BBMeetup.h */,
 				77ACA46319A01D4A004865B8 /* BBMeetup.m */,
 				77ACA46619A01D90004865B8 /* BBUniversity.h */,
 				77ACA46719A01D90004865B8 /* BBUniversity.m */,
-				77ACA46C19A01DCD004865B8 /* Datastore */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -376,7 +396,11 @@
 				774C2AED197C7B9A006DCC87 /* BBLeftDrawerTableViewController.m in Sources */,
 				77ACA46119A00EFB004865B8 /* BBSettingsViewController.m in Sources */,
 				77ACA45E19A00882004865B8 /* BBConstants.m in Sources */,
+				F83AA34A19A027B6006B49B6 /* BBCourse.m in Sources */,
+				F83AA34719A02731006B49B6 /* BBCoursePickerViewController.m in Sources */,
 				77ACA46F19A020AF004865B8 /* BBUniversityPickerViewController.m in Sources */,
+				F83AA35319A02F8A006B49B6 /* BBActivityPickerViewController.m in Sources */,
+				F83AA35619A03223006B49B6 /* BBCreateMeetingNowViewController.m in Sources */,
 				3B92333A19685E050037BA47 /* BBAppDelegate.m in Sources */,
 				3B92333619685E050037BA47 /* main.m in Sources */,
 				77ACA46B19A01DC7004865B8 /* BBDataStore.m in Sources */,
