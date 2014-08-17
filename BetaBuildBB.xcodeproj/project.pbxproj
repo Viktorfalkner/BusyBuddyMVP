@@ -36,6 +36,7 @@
 		F83AA34A19A027B6006B49B6 /* BBCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = F83AA34919A027B6006B49B6 /* BBCourse.m */; };
 		F83AA35319A02F8A006B49B6 /* BBActivityPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F83AA35219A02F8A006B49B6 /* BBActivityPickerViewController.m */; };
 		F83AA35619A03223006B49B6 /* BBCreateMeetingNowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F83AA35519A03223006B49B6 /* BBCreateMeetingNowViewController.m */; };
+		F83AA35919A17275006B49B6 /* BBOnboarding.m in Sources */ = {isa = PBXBuildFile; fileRef = F83AA35819A17275006B49B6 /* BBOnboarding.m */; };
 		F870DB75197C762500E1A779 /* BBRightDrawerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F870DB74197C762500E1A779 /* BBRightDrawerTableViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +97,8 @@
 		F83AA35219A02F8A006B49B6 /* BBActivityPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBActivityPickerViewController.m; sourceTree = "<group>"; };
 		F83AA35419A03223006B49B6 /* BBCreateMeetingNowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBCreateMeetingNowViewController.h; sourceTree = "<group>"; };
 		F83AA35519A03223006B49B6 /* BBCreateMeetingNowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBCreateMeetingNowViewController.m; sourceTree = "<group>"; };
+		F83AA35719A17275006B49B6 /* BBOnboarding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBOnboarding.h; sourceTree = "<group>"; };
+		F83AA35819A17275006B49B6 /* BBOnboarding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBOnboarding.m; sourceTree = "<group>"; };
 		F870DB73197C762500E1A779 /* BBRightDrawerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBRightDrawerTableViewController.h; sourceTree = "<group>"; };
 		F870DB74197C762500E1A779 /* BBRightDrawerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBRightDrawerTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -243,6 +246,8 @@
 		77ACA46519A01D4D004865B8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F83AA35719A17275006B49B6 /* BBOnboarding.h */,
+				F83AA35819A17275006B49B6 /* BBOnboarding.m */,
 				F83AA34819A027B6006B49B6 /* BBCourse.h */,
 				F83AA34919A027B6006B49B6 /* BBCourse.m */,
 				77ACA46219A01D4A004865B8 /* BBMeetup.h */,
@@ -393,6 +398,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F83AA35919A17275006B49B6 /* BBOnboarding.m in Sources */,
 				F870DB75197C762500E1A779 /* BBRightDrawerTableViewController.m in Sources */,
 				77ACA46819A01D90004865B8 /* BBUniversity.m in Sources */,
 				77ACA46419A01D4A004865B8 /* BBMeetup.m in Sources */,

@@ -52,7 +52,6 @@
     self.mapOutlet.delegate = self;
     self.mapOutlet.showsUserLocation = YES;
     
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -77,8 +76,6 @@
     [super viewWillAppear:animated];
     self.currentUser = [PFUser currentUser];
     [self checkForLoggedInUser];
-
-    
 }
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
@@ -93,8 +90,6 @@
     
     
     [self.mapOutlet setRegion:region animated:YES];
-    
-    
 }
 
 -(void)plotLocationsOnMap:(BBMeetup *)meetUpToBePlotted
@@ -108,7 +103,6 @@
     pointToAnnotate.title = meetUpToBePlotted.meetupName;
     
     [self.mapOutlet addAnnotation:pointToAnnotate];
-
 }
 
 
@@ -205,6 +199,7 @@
 // Sent to the delegate when a PFUser is signed up.
 - (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user
 {
+    [BBOnboarding firstTimeUserLogin];
     [self dismissViewControllerAnimated:YES completion:nil]; // Dismiss the PFSignUpViewController
 }
 
