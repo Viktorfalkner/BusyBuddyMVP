@@ -27,6 +27,8 @@
 {
     [super viewDidLoad];
     
+    self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0);
+    
     self.rightDrawerOptions = @[@"One", @"Two", @"Three", @"Four", @"Done"];
     
     // Uncomment the following line to preserve selection between presentations.
