@@ -8,20 +8,36 @@
 
 #import "BBDataStore.h"
 #import "BBUniversity.h"
+#import "BBCourse.h"
 
 @implementation BBDataStore
 
++ (instancetype)sharedDataStore {
+    static BBDataStore *_sharedDataStore = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _sharedDataStore = [[BBDataStore alloc]init];
+    });
+    
+    return _sharedDataStore;
+}
 
 - (instancetype)init
 {
     self = [super init];
     if (self) {
         _universitiesArray = [NSMutableArray new];
+        _universityCoursesArray = [NSMutableArray new];
     }
     return self;
 }
 
+-(NSMutableArray *)clearArray
+{
+    return [NSMutableArray new];
+}
 
+//Fetch universities
 -(void)fetchUniversitiesFromParseWithCompletion:(void (^)(void))universitiesFetched {
     PFQuery *queryUniversities = [PFQuery queryWithClassName:@"University"];
     self.universitiesArray = [self clearArray];
@@ -47,21 +63,36 @@
     }];
     
 }
--(NSMutableArray *)clearArray
+
+//Fetch courses for University
+-(void)fetchCoursesForUniversity:(BBUniversity *)university FromParse:(void (^)(void))classesFetched
 {
-    return [NSMutableArray new];
-}
-
-
-
-+ (instancetype)sharedDataStore {
-    static BBDataStore *_sharedDataStore = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _sharedDataStore = [[BBDataStore alloc]init];
-    });
+    PFQuery *queryClasses = [PFQuery queryWithClassName:@"Class"];
+    [queryClasses whereKey:@"universityPointer" containsString:university.objectId];
+    self.universityCoursesArray = [self clearArray];
+    [queryClasses findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error)
+        {
+            if ([objects count] == 0) {
+                BBCourse *emptyCourse = [[BBCourse alloc] init];
+                [self.universityCoursesArray addObject:emptyCourse];
+            }
+            else
+            {
+                for (NSDictionary *class in objects)
+                {
+                    BBCourse *newCourse = [[BBCourse alloc]initFromDictionary:class];
+                    [self.universityCoursesArray addObject:newCourse];
+                }
+            }
+            classesFetched();
+        }
+        else
+        {
+            NSLog(@"Parse error in datastore: %@", error.localizedDescription);
+        }
+    }];
     
-    return _sharedDataStore;
 }
 
 @end
