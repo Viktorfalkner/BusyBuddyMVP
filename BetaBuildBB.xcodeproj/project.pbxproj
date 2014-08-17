@@ -25,12 +25,12 @@
 		3B92335C196861300037BA47 /* BBLoginRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B92335B196861300037BA47 /* BBLoginRootViewController.m */; };
 		774C2AED197C7B9A006DCC87 /* BBLeftDrawerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 774C2AEC197C7B9A006DCC87 /* BBLeftDrawerTableViewController.m */; };
 		77ACA45E19A00882004865B8 /* BBConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 77ACA45D19A00882004865B8 /* BBConstants.m */; };
-		77ACA46119A00EFB004865B8 /* BBSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77ACA46019A00EFB004865B8 /* BBSettingsViewController.m */; };
 		77ACA46419A01D4A004865B8 /* BBMeetup.m in Sources */ = {isa = PBXBuildFile; fileRef = 77ACA46319A01D4A004865B8 /* BBMeetup.m */; };
 		77ACA46819A01D90004865B8 /* BBUniversity.m in Sources */ = {isa = PBXBuildFile; fileRef = 77ACA46719A01D90004865B8 /* BBUniversity.m */; };
 		77ACA46B19A01DC7004865B8 /* BBDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 77ACA46A19A01DC7004865B8 /* BBDataStore.m */; };
 		77ACA46F19A020AF004865B8 /* BBUniversityPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77ACA46E19A020AF004865B8 /* BBUniversityPickerViewController.m */; };
 		77ACA47119A14F60004865B8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77ACA47019A14F60004865B8 /* MapKit.framework */; };
+		77ACA47419A1586F004865B8 /* BBSettingsAndOptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77ACA47319A1586F004865B8 /* BBSettingsAndOptionsTableViewController.m */; };
 		91E72CDBE84E42BDAC6F181B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E94057B3393E422194634168 /* libPods.a */; };
 		F83AA34719A02731006B49B6 /* BBCoursePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F83AA34619A02731006B49B6 /* BBCoursePickerViewController.m */; };
 		F83AA34A19A027B6006B49B6 /* BBCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = F83AA34919A027B6006B49B6 /* BBCourse.m */; };
@@ -75,8 +75,6 @@
 		774C2AEC197C7B9A006DCC87 /* BBLeftDrawerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBLeftDrawerTableViewController.m; sourceTree = "<group>"; };
 		77ACA45C19A00882004865B8 /* BBConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBConstants.h; sourceTree = "<group>"; };
 		77ACA45D19A00882004865B8 /* BBConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBConstants.m; sourceTree = "<group>"; };
-		77ACA45F19A00EFB004865B8 /* BBSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBSettingsViewController.h; sourceTree = "<group>"; };
-		77ACA46019A00EFB004865B8 /* BBSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBSettingsViewController.m; sourceTree = "<group>"; };
 		77ACA46219A01D4A004865B8 /* BBMeetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBMeetup.h; sourceTree = "<group>"; };
 		77ACA46319A01D4A004865B8 /* BBMeetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBMeetup.m; sourceTree = "<group>"; };
 		77ACA46619A01D90004865B8 /* BBUniversity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBUniversity.h; sourceTree = "<group>"; };
@@ -86,6 +84,8 @@
 		77ACA46D19A020AF004865B8 /* BBUniversityPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBUniversityPickerViewController.h; sourceTree = "<group>"; };
 		77ACA46E19A020AF004865B8 /* BBUniversityPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBUniversityPickerViewController.m; sourceTree = "<group>"; };
 		77ACA47019A14F60004865B8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		77ACA47219A1586F004865B8 /* BBSettingsAndOptionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBSettingsAndOptionsTableViewController.h; sourceTree = "<group>"; };
+		77ACA47319A1586F004865B8 /* BBSettingsAndOptionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBSettingsAndOptionsTableViewController.m; sourceTree = "<group>"; };
 		B2FBE3E1967446B38889EE65 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		E94057B3393E422194634168 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F83AA34519A02731006B49B6 /* BBCoursePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBCoursePickerViewController.h; sourceTree = "<group>"; };
@@ -218,8 +218,6 @@
 				F870DB74197C762500E1A779 /* BBRightDrawerTableViewController.m */,
 				77ACA45C19A00882004865B8 /* BBConstants.h */,
 				77ACA45D19A00882004865B8 /* BBConstants.m */,
-				77ACA45F19A00EFB004865B8 /* BBSettingsViewController.h */,
-				77ACA46019A00EFB004865B8 /* BBSettingsViewController.m */,
 				77ACA46D19A020AF004865B8 /* BBUniversityPickerViewController.h */,
 				77ACA46E19A020AF004865B8 /* BBUniversityPickerViewController.m */,
 				F83AA34519A02731006B49B6 /* BBCoursePickerViewController.h */,
@@ -228,6 +226,8 @@
 				F83AA35219A02F8A006B49B6 /* BBActivityPickerViewController.m */,
 				F83AA35419A03223006B49B6 /* BBCreateMeetingNowViewController.h */,
 				F83AA35519A03223006B49B6 /* BBCreateMeetingNowViewController.m */,
+				77ACA47219A1586F004865B8 /* BBSettingsAndOptionsTableViewController.h */,
+				77ACA47319A1586F004865B8 /* BBSettingsAndOptionsTableViewController.m */,
 				77ACA46519A01D4D004865B8 /* Model */,
 			);
 			name = Controllers;
@@ -398,7 +398,6 @@
 				77ACA46419A01D4A004865B8 /* BBMeetup.m in Sources */,
 				3B92335C196861300037BA47 /* BBLoginRootViewController.m in Sources */,
 				774C2AED197C7B9A006DCC87 /* BBLeftDrawerTableViewController.m in Sources */,
-				77ACA46119A00EFB004865B8 /* BBSettingsViewController.m in Sources */,
 				77ACA45E19A00882004865B8 /* BBConstants.m in Sources */,
 				F83AA34A19A027B6006B49B6 /* BBCourse.m in Sources */,
 				F83AA34719A02731006B49B6 /* BBCoursePickerViewController.m in Sources */,
@@ -408,6 +407,7 @@
 				3B92333A19685E050037BA47 /* BBAppDelegate.m in Sources */,
 				3B92333619685E050037BA47 /* main.m in Sources */,
 				77ACA46B19A01DC7004865B8 /* BBDataStore.m in Sources */,
+				77ACA47419A1586F004865B8 /* BBSettingsAndOptionsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,7 @@
 //
 
 #import "BBLoginRootViewController.h"
-#import "BBSettingsViewController.h"
+#import "BBSettingsAndOptionsTableViewController.h"
 #import "BBDataStore.h"
 #import "BBMeetup.h"
 
@@ -236,7 +236,7 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"settingsSegue"]) {
-        BBSettingsViewController *nextVC = segue.destinationViewController;
+        BBSettingsAndOptionsTableViewController *nextVC = segue.destinationViewController;
         
         nextVC.currentUser = self.currentUser;
         

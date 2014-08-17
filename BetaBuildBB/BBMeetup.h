@@ -8,11 +8,24 @@
 
 #import <Foundation/Foundation.h>
 
+@class BBUniversity;
+@class BBCourse;
+
 @interface BBMeetup : NSObject
+
+
 
 @property (nonatomic) NSNumber *latitudeFloat;
 @property (nonatomic) NSNumber *longitudeFloat;
+
+//User Input Properties
 @property (strong, nonatomic) NSString *meetupName;
+@property (strong, nonatomic) NSString *meetupActivity;
+
+
+//Relational Properties
+@property (strong, nonatomic) BBUniversity *meetupUniversity;
+@property (strong, nonatomic) BBCourse *meetupCourse;
 
 
 
