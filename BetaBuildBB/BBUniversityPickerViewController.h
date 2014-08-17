@@ -12,9 +12,9 @@
 
 @interface BBUniversityPickerViewController : UIViewController <UIPickerViewDataSource,UIPickerViewDelegate>
 
-
 @property (strong, nonatomic) BBUniversity *selectedUniversity;
 @property (strong, nonatomic) BBDataStore *dataStore;
+
 
 
 @end

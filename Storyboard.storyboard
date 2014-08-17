@@ -42,6 +42,10 @@
                                     <segue destination="fzP-ES-BHf" kind="push" id="d3q-vt-eEz"/>
                                 </connections>
                             </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WaN-Ro-uOM">
+                                <rect key="frame" x="0.0" y="65" width="320" height="446"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -213,7 +217,6 @@
         <!--Navigation Controller - Item-->
         <scene sceneID="hw0-1N-izB">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Xe2-Tt-7aY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d8L-tb-fsj" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="Jac-B4-9jw"/>
                     <toolbarItems/>
@@ -226,6 +229,7 @@
                         <segue destination="M7T-Dm-h6E" kind="relationship" relationship="rootViewController" id="st1-7n-Bec"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xe2-Tt-7aY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="769" y="338"/>
         </scene>

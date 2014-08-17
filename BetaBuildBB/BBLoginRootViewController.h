@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "UIViewController+MMDrawerController.h"
 #import "MMDrawerBarButtonItem.h"
+#import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
 @class BBDataStore;
 
 @interface BBLoginRootViewController : UIViewController <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, UITabBarDelegate>
