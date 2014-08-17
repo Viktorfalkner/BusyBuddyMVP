@@ -43,7 +43,7 @@
                                 </connections>
                             </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WaN-Ro-uOM">
-                                <rect key="frame" x="0.0" y="65" width="320" height="446"/>
+                                <rect key="frame" x="0.0" y="61" width="320" height="458"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </mapView>
                         </subviews>
@@ -52,6 +52,7 @@
                     <navigationItem key="navigationItem" id="YtV-6p-oLG"/>
                     <connections>
                         <outlet property="bottomTabBar" destination="yru-5t-ZpU" id="xgS-be-PId"/>
+                        <outlet property="mapOutlet" destination="WaN-Ro-uOM" id="L95-Lo-HId"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mug-uh-GmA" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -11,6 +11,7 @@
 #import "BBDataStore.h"
 
 @interface BBLoginRootViewController ()
+@property (weak, nonatomic) IBOutlet MKMapView *mapOutlet;
 @property (weak, nonatomic) IBOutlet UITabBar *bottomTabBar;
 
 
@@ -32,13 +33,24 @@
 {
     [super viewDidLoad];
     self.bottomTabBar.delegate = self;
+    
     self.dataStore = [BBDataStore sharedDataStore];
+    
+    
+    //Tracking Location
+    self.locationManager = [[CLLocationManager alloc]init];
+    [self.locationManager startUpdatingLocation];
+    self.currentLocation = [[CLLocation alloc]init];
+    
     
     [self.dataStore fetchUniversitiesFromParseWithCompletion:^{
         NSLog(@"%@", self.dataStore.universitiesArray);
     }];
     
- 
+    //Set Map Delegate
+    self.mapOutlet.delegate = self;
+    self.mapOutlet.showsUserLocation = YES;
+    
     
 }
 
@@ -68,10 +80,24 @@
     
 }
 
-- (void)didReceiveMemoryWarning
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
-    [super didReceiveMemoryWarning];
+    self.currentLocation = locations.lastObject;
 }
+
+-(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+{
+    CLLocationCoordinate2D coord = self.mapOutlet.userLocation.location.coordinate;
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coord, 1500.0,1500.0);
+    
+    
+    [self.mapOutlet setRegion:region animated:YES];
+    
+    
+}
+
+
+
 #pragma mark - STANDARD PARSE LOGIN METHODS
 - (void) checkForLoggedInUser
 {

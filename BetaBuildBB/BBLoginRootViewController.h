@@ -13,7 +13,7 @@
 #import <MapKit/MapKit.h>
 @class BBDataStore;
 
-@interface BBLoginRootViewController : UIViewController <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, UITabBarDelegate>
+@interface BBLoginRootViewController : UIViewController <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, UITabBarDelegate, MKMapViewDelegate, CLLocationManagerDelegate>
 
 
 @property (strong, nonatomic) PFUser *currentUser;
@@ -22,5 +22,10 @@
 
 @property (strong, nonatomic) MMDrawerBarButtonItem *leftBarButtonItem;
 @property (strong, nonatomic) MMDrawerBarButtonItem *rightBarButtonItem;
+
+
+@property (strong, nonatomic) CLLocationManager *locationManager;
+@property (strong, nonatomic) CLLocation *currentLocation;
+
 
 @end
