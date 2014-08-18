@@ -69,20 +69,6 @@ numberOfRowsInComponent:(NSInteger)component
     return class.title;
 }
 
-//Shrinks autofit
-//- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
-//{
-//    UILabel *retval = (id)view;
-//    if (!retval) {
-//        retval= [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, [pickerView rowSizeForComponent:component].width, [pickerView rowSizeForComponent:component].height)];
-//    }
-//    BBCourse *class = self.dataStore.universityCoursesArray[row];
-//    retval.text = class.title;
-//    self.selectedCourse = self.dataStore.universityCoursesArray[row];
-//    retval.adjustsFontSizeToFitWidth = YES;
-//    return retval;
-//}
-
 #pragma mark -
 #pragma mark PickerView Delegate
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row
@@ -90,7 +76,6 @@ numberOfRowsInComponent:(NSInteger)component
 {
     self.selectedCourse = self.dataStore.universityCoursesArray[row];
 }
-
 
 #pragma mark - Navigation
 

@@ -15,8 +15,8 @@
 @interface BBUniversityPickerViewController ()
 
 @property (weak, nonatomic) IBOutlet UIPickerView *universityPicker;
-- (IBAction)universityChosenButton:(id)sender;
 
+- (IBAction)universityChosenButton:(id)sender;
 
 @end
 

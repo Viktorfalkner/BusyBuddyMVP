@@ -75,7 +75,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
+
     [self checkForLoggedInUser];
     
     //Left Drawer Button
@@ -103,8 +103,7 @@
 {
     CLLocationCoordinate2D coord = self.mapOutlet.userLocation.location.coordinate;
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coord, 1500.0,1500.0);
-    
-    
+
     [self.mapOutlet setRegion:region animated:YES];
 }
 
@@ -191,6 +190,7 @@
 // Sent to the delegate when a PFUser is signed up.
 - (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user
 {
+    [BBOnboarding firstTimeUserLogin];
     [self checkIfUserSelectedUniversity];
     [self dismissViewControllerAnimated:YES completion:nil]; // Dismiss the PFSignUpViewController
 }
@@ -204,9 +204,6 @@
             nextVC.currentUser = self.dataStore.currentUser;
             
         }
-
 }
-
-#pragma mark - Will make category with following methods
 
 @end
