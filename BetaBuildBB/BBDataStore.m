@@ -28,6 +28,7 @@
     if (self) {
         _universitiesArray = [NSMutableArray new];
         _universityCoursesArray = [NSMutableArray new];
+        _currentUser = [PFUser currentUser];
     }
     return self;
 }

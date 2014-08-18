@@ -88,8 +88,8 @@
     CLLocationCoordinate2D coord = self.mapOutlet.userLocation.location.coordinate;
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coord, 1500.0,1500.0);
     
-    
     [self.mapOutlet setRegion:region animated:YES];
+    
 }
 
 -(void)plotLocationsOnMap:(BBMeetup *)meetUpToBePlotted
@@ -132,7 +132,7 @@
         
         [self presentViewController:logInViewController animated:YES completion:NULL];
     } else {
-        self.currentUser = [PFUser currentUser];
+//        self.currentUser 
     }
 }
 

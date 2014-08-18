@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+
 @class BBUniversity;
 @class BBDataStore;
 
@@ -14,7 +15,5 @@
 
 @property (strong, nonatomic) BBUniversity *selectedUniversity;
 @property (strong, nonatomic) BBDataStore *dataStore;
-
-
 
 @end

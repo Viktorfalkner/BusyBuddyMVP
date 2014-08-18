@@ -10,6 +10,7 @@
 
 @class BBUniversity;
 @class BBMeetup;
+@class BBUser;
 
 @interface BBDataStore : NSObject
 
