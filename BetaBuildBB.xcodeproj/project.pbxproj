@@ -32,6 +32,7 @@
 		77ACA47119A14F60004865B8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77ACA47019A14F60004865B8 /* MapKit.framework */; };
 		77ACA47419A1586F004865B8 /* BBSettingsAndOptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77ACA47319A1586F004865B8 /* BBSettingsAndOptionsTableViewController.m */; };
 		91E72CDBE84E42BDAC6F181B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E94057B3393E422194634168 /* libPods.a */; };
+		F8206B2C19A1C7CE008BCD6D /* BBLoginRootViewController+parseLoginMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = F8206B2B19A1C7CE008BCD6D /* BBLoginRootViewController+parseLoginMethods.m */; };
 		F83AA34719A02731006B49B6 /* BBCoursePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F83AA34619A02731006B49B6 /* BBCoursePickerViewController.m */; };
 		F83AA34A19A027B6006B49B6 /* BBCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = F83AA34919A027B6006B49B6 /* BBCourse.m */; };
 		F83AA35319A02F8A006B49B6 /* BBActivityPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F83AA35219A02F8A006B49B6 /* BBActivityPickerViewController.m */; };
@@ -89,6 +90,8 @@
 		77ACA47319A1586F004865B8 /* BBSettingsAndOptionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBSettingsAndOptionsTableViewController.m; sourceTree = "<group>"; };
 		B2FBE3E1967446B38889EE65 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		E94057B3393E422194634168 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8206B2A19A1C7CE008BCD6D /* BBLoginRootViewController+parseLoginMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BBLoginRootViewController+parseLoginMethods.h"; sourceTree = "<group>"; };
+		F8206B2B19A1C7CE008BCD6D /* BBLoginRootViewController+parseLoginMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BBLoginRootViewController+parseLoginMethods.m"; sourceTree = "<group>"; };
 		F83AA34519A02731006B49B6 /* BBCoursePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBCoursePickerViewController.h; sourceTree = "<group>"; };
 		F83AA34619A02731006B49B6 /* BBCoursePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBCoursePickerViewController.m; sourceTree = "<group>"; };
 		F83AA34819A027B6006B49B6 /* BBCourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBCourse.h; sourceTree = "<group>"; };
@@ -231,6 +234,7 @@
 				F83AA35519A03223006B49B6 /* BBCreateMeetingNowViewController.m */,
 				77ACA47219A1586F004865B8 /* BBSettingsAndOptionsTableViewController.h */,
 				77ACA47319A1586F004865B8 /* BBSettingsAndOptionsTableViewController.m */,
+				F8206B2D19A1C7DB008BCD6D /* Categories */,
 				77ACA46519A01D4D004865B8 /* Model */,
 			);
 			name = Controllers;
@@ -265,6 +269,15 @@
 				77ACA46A19A01DC7004865B8 /* BBDataStore.m */,
 			);
 			name = Datastore;
+			sourceTree = "<group>";
+		};
+		F8206B2D19A1C7DB008BCD6D /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				F8206B2A19A1C7CE008BCD6D /* BBLoginRootViewController+parseLoginMethods.h */,
+				F8206B2B19A1C7CE008BCD6D /* BBLoginRootViewController+parseLoginMethods.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -401,6 +414,7 @@
 				F83AA35919A17275006B49B6 /* BBOnboarding.m in Sources */,
 				F870DB75197C762500E1A779 /* BBRightDrawerTableViewController.m in Sources */,
 				77ACA46819A01D90004865B8 /* BBUniversity.m in Sources */,
+				F8206B2C19A1C7CE008BCD6D /* BBLoginRootViewController+parseLoginMethods.m in Sources */,
 				77ACA46419A01D4A004865B8 /* BBMeetup.m in Sources */,
 				3B92335C196861300037BA47 /* BBLoginRootViewController.m in Sources */,
 				774C2AED197C7B9A006DCC87 /* BBLeftDrawerTableViewController.m in Sources */,

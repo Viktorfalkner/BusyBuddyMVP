@@ -30,7 +30,6 @@
     self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0);
     
     self.leftDrawerOptions = @[@"One", @"Two", @"Three", @"Four"];
-    
 }
 
 - (void)didReceiveMemoryWarning
