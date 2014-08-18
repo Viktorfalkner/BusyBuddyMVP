@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Login Root View Controller - BusyBuddy-->
+        <!--Login Root View Controller-->
         <scene sceneID="g5U-MX-3RZ">
             <objects>
                 <viewController id="M7T-Dm-h6E" customClass="BBLoginRootViewController" sceneMemberID="viewController">
@@ -19,7 +19,7 @@
                             <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yru-5t-ZpU">
                                 <rect key="frame" x="0.0" y="519" width="320" height="49"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000596046448" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                                 <items/>
                                 <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </tabBar>
@@ -76,7 +76,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="BusyBuddy" id="YtV-6p-oLG"/>
+                    <navigationItem key="navigationItem" id="YtV-6p-oLG"/>
                     <connections>
                         <outlet property="bottomTabBar" destination="yru-5t-ZpU" id="xgS-be-PId"/>
                         <outlet property="mapOutlet" destination="WaN-Ro-uOM" id="L95-Lo-HId"/>
@@ -421,7 +421,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d8L-tb-fsj" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="Jac-B4-9jw"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="vSQ-mH-dAI">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vSQ-mH-dAI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

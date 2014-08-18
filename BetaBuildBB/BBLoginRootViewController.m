@@ -52,13 +52,30 @@
     self.mapOutlet.delegate = self;
     self.mapOutlet.showsUserLocation = YES;
     
-    [[UINavigationBar appearance] setBarTintColor:[UIColor blackColor]];
+//    UIColor *busyBuddyYellow = [UIColor colorWithRed:254.0/255.0 green:197.0/255.0 blue:2.0/255.0 alpha:1];
+    
+     self.navigationController.navigationBar.tintColor = [UIColor yellowColor];
+    
+    //Color Dictionary
     NSDictionary *textAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
                                     [UIColor yellowColor],NSForegroundColorAttributeName,
                                     [UIColor yellowColor],NSBackgroundColorAttributeName,nil];
     
+    //Setting up Navigation Bar Colors
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:34.0/255 green:34.0/255.0 blue:34.0/255.0 alpha:1]];
+    [[UINavigationBar appearance] setTitleTextAttributes:textAttributes];
+   
+    
+    //Setting up Tab Bar colors
+    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:34.0/255 green:34.0/255.0 blue:34.0/255.0 alpha:1]];
+    
+    
+   
+    
     self.navigationController.navigationBar.titleTextAttributes = textAttributes;
     self.title = @"BusyBuddy";
+    
+
     
     
 }
