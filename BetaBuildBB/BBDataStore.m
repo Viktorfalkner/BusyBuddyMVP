@@ -28,6 +28,7 @@
     if (self) {
         _universitiesArray = [NSMutableArray new];
         _universityCoursesArray = [NSMutableArray new];
+        _currentUser = [PFUser currentUser];
     }
     return self;
 }
@@ -65,10 +66,10 @@
 }
 
 //Fetch courses for University
--(void)fetchCoursesForUniversity:(BBUniversity *)university FromParse:(void (^)(void))classesFetched
+-(void)fetchCoursesForUniversityFromParse:(void (^)(void))classesFetched
 {
     PFQuery *queryClasses = [PFQuery queryWithClassName:@"Class"];
-    [queryClasses whereKey:@"universityPointer" containsString:university.objectId];
+    [queryClasses whereKey:@"universityPointer" containsString:self.selectedUniversity.objectId];
     self.universityCoursesArray = [self clearArray];
     [queryClasses findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error)
