@@ -52,11 +52,38 @@
     self.mapOutlet.delegate = self;
     self.mapOutlet.showsUserLocation = YES;
     
+//    UIColor *busyBuddyYellow = [UIColor colorWithRed:254.0/255.0 green:197.0/255.0 blue:2.0/255.0 alpha:1];
+    
+     self.navigationController.navigationBar.tintColor = [UIColor yellowColor];
+    
+    //Color Dictionary
+    NSDictionary *textAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                    [UIColor yellowColor],NSForegroundColorAttributeName,
+                                    [UIColor yellowColor],NSBackgroundColorAttributeName,nil];
+    
+    //Setting up Navigation Bar Colors
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:34.0/255 green:34.0/255.0 blue:34.0/255.0 alpha:1]];
+    [[UINavigationBar appearance] setTitleTextAttributes:textAttributes];
+   
+    
+    //Setting up Tab Bar colors
+    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:34.0/255 green:34.0/255.0 blue:34.0/255.0 alpha:1]];
+    
+    
+   
+    
+    self.navigationController.navigationBar.titleTextAttributes = textAttributes;
+    self.title = @"BusyBuddy";
+    
+
+    
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    [self checkForLoggedInUser];
     
     //Left Drawer Button
     self.leftBarButtonItem = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
@@ -75,7 +102,9 @@
 {
     [super viewWillAppear:animated];
     self.currentUser = [PFUser currentUser];
-    [self checkForLoggedInUser];
+   
+
+    
 }
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
@@ -88,7 +117,9 @@
     CLLocationCoordinate2D coord = self.mapOutlet.userLocation.location.coordinate;
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coord, 1500.0,1500.0);
     
+    
     [self.mapOutlet setRegion:region animated:YES];
+    
     
 }
 
@@ -103,6 +134,7 @@
     pointToAnnotate.title = meetUpToBePlotted.meetupName;
     
     [self.mapOutlet addAnnotation:pointToAnnotate];
+
 }
 
 
@@ -132,7 +164,7 @@
         
         [self presentViewController:logInViewController animated:YES completion:NULL];
     } else {
-//        self.currentUser 
+        self.currentUser = [PFUser currentUser];
     }
 }
 
@@ -156,6 +188,7 @@
 // Sent to the delegate when a PFUser is logged in.
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user
 {
+    self.currentUser = user;
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
@@ -199,7 +232,6 @@
 // Sent to the delegate when a PFUser is signed up.
 - (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user
 {
-    [BBOnboarding firstTimeUserLogin];
     [self dismissViewControllerAnimated:YES completion:nil]; // Dismiss the PFSignUpViewController
 }
 

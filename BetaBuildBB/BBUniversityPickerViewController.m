@@ -33,6 +33,8 @@
     self.dataStore = [BBDataStore sharedDataStore];
     self.universityPicker.delegate = self;
     self.universityPicker.dataSource = self;
+
+
 }
 
 #pragma mark -
@@ -54,18 +56,18 @@ numberOfRowsInComponent:(NSInteger)component
              titleForRow:(NSInteger)row
             forComponent:(NSInteger)component
 {
-//    BBUniversity *university = self.dataStore.universitiesArray[row];
+    BBUniversity *university = self.dataStore.universitiesArray[row];
     self.selectedUniversity = self.dataStore.universitiesArray[row];
-    return self.selectedUniversity.name;
+    return university.name;
 }
 
 #pragma mark -
 #pragma mark PickerView Delegate
-//-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row
-//      inComponent:(NSInteger)component
-//{
-//    self.selectedUniversity = self.dataStore.universitiesArray[row];
-//}
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row
+      inComponent:(NSInteger)component
+{
+    self.selectedUniversity = self.dataStore.universitiesArray[row];
+}
 
 #pragma mark - Navigation
 
@@ -76,9 +78,6 @@ numberOfRowsInComponent:(NSInteger)component
     
     if ([segue.identifier isEqualToString:@"universitySelected"]) {
         newVC.selectedUniversity = self.selectedUniversity;
-        [self.dataStore.currentUser setObject:newVC.selectedUniversity.objectId forKey:@"universityPointer"];
-        [self.dataStore.currentUser saveInBackground];
-        
     }
 }
 
