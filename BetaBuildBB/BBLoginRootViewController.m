@@ -52,6 +52,14 @@
     self.mapOutlet.delegate = self;
     self.mapOutlet.showsUserLocation = YES;
     
+    [[UINavigationBar appearance] setBarTintColor:[UIColor blackColor]];
+    NSDictionary *textAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                    [UIColor yellowColor],NSForegroundColorAttributeName,
+                                    [UIColor yellowColor],NSBackgroundColorAttributeName,nil];
+    
+    self.navigationController.navigationBar.titleTextAttributes = textAttributes;
+    self.title = @"BusyBuddy";
+    
     
 }
 
