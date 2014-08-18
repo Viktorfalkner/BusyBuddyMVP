@@ -18,16 +18,11 @@
 
 @implementation BBSettingsAndOptionsTableViewController
 
-
-
-
 - (IBAction)logoutButton:(id)sender
 {
     [PFUser logOut];
     
     [self.navigationController popToRootViewControllerAnimated:YES];
-    
-    
 }
 
 

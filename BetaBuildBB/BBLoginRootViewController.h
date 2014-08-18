@@ -14,12 +14,8 @@
 
 @class BBDataStore;
 @class BBMeetup;
-@class BBUser;
 
 @interface BBLoginRootViewController : UIViewController <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, UITabBarDelegate, MKMapViewDelegate, CLLocationManagerDelegate>
-
-
-@property (strong, nonatomic) BBUser *currentUser;
 
 @property (strong, nonatomic) BBDataStore *dataStore;
 

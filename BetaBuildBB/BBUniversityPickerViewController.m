@@ -1,4 +1,4 @@
-//
+
 //  BBUniversityPickerViewController.m
 //  BetaBuildBB
 //
@@ -10,9 +10,13 @@
 #import "BBDataStore.h"
 #import "BBUniversity.h"
 #import "BBCoursePickerViewController.h"
+#import "BBLoginRootViewController.h"
 
 @interface BBUniversityPickerViewController ()
+
 @property (weak, nonatomic) IBOutlet UIPickerView *universityPicker;
+- (IBAction)universityChosenButton:(id)sender;
+
 
 @end
 
@@ -74,13 +78,13 @@ numberOfRowsInComponent:(NSInteger)component
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    BBCoursePickerViewController *newVC = segue.destinationViewController;
-    if ([segue.identifier isEqualToString:@"universitySelected"]) {
-        newVC.selectedUniversity = self.dataStore.selectedUniversity;
-        [self.dataStore.currentUser setObject:self.dataStore.selectedUniversity.objectId forKey:@"universityPointer"];
-        [self.dataStore.currentUser setObject:[NSNumber numberWithBool:YES] forKey:@"pickedUniversity"];
-        [self.dataStore.currentUser saveInBackground];
-    }
 }
 
+- (IBAction)universityChosenButton:(id)sender
+{
+    [self.dataStore.currentUser setObject:self.dataStore.selectedUniversity.objectId forKey:@"universityPointer"];
+    [self.dataStore.currentUser setObject:[NSNumber numberWithBool:YES] forKey:@"pickedUniversity"];
+    [self.dataStore.currentUser saveInBackground];
+    [self.navigationController popViewControllerAnimated:YES];
+}
 @end

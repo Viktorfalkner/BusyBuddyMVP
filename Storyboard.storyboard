@@ -37,9 +37,6 @@
                                 <rect key="frame" x="0.0" y="502" width="115" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="conference-25"/>
-                                <connections>
-                                    <segue destination="fzP-ES-BHf" kind="push" id="d3q-vt-eEz"/>
-                                </connections>
                             </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WaN-Ro-uOM">
                                 <rect key="frame" x="0.0" y="61" width="320" height="458"/>
@@ -189,7 +186,7 @@
         <!--University Picker View Controller-->
         <scene sceneID="GaI-Ny-b9Y">
             <objects>
-                <viewController id="fzP-ES-BHf" customClass="BBUniversityPickerViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="pickUniversityController" id="fzP-ES-BHf" customClass="BBUniversityPickerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rGY-Jj-x6C"/>
                         <viewControllerLayoutGuide type="bottom" id="dzY-i4-J2r"/>
@@ -215,7 +212,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Mhj-E0-AxU" kind="push" identifier="universitySelected" id="JgL-gD-krC"/>
+                                    <action selector="universityChosenButton:" destination="fzP-ES-BHf" eventType="touchUpInside" id="xkK-ca-9Zd"/>
                                 </connections>
                             </button>
                         </subviews>

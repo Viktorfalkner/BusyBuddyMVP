@@ -10,10 +10,13 @@
 #import "BBSettingsAndOptionsTableViewController.h"
 #import "BBDataStore.h"
 #import "BBMeetup.h"
+#import "BBUniversityPickerViewController.h"
 
 @interface BBLoginRootViewController ()
+
 @property (weak, nonatomic) IBOutlet MKMapView *mapOutlet;
 @property (weak, nonatomic) IBOutlet UITabBar *bottomTabBar;
+
 
 
 @end
@@ -54,7 +57,7 @@
     
 //    UIColor *busyBuddyYellow = [UIColor colorWithRed:254.0/255.0 green:197.0/255.0 blue:2.0/255.0 alpha:1];
     
-     self.navigationController.navigationBar.tintColor = [UIColor yellowColor];
+    self.navigationController.navigationBar.tintColor = [UIColor yellowColor];
     
     //Color Dictionary
     NSDictionary *textAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -83,6 +86,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
     [self checkForLoggedInUser];
     
     //Left Drawer Button
@@ -98,19 +102,19 @@
     
     self.navigationItem.rightBarButtonItem  = self.rightBarButtonItem;
 }
+
+
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.currentUser = [PFUser currentUser];
-   
-
-    
 }
+
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     self.currentLocation = locations.lastObject;
 }
+
 
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
@@ -146,7 +150,6 @@
 }
 
 
-
 #pragma mark - STANDARD PARSE LOGIN METHODS
 - (void) checkForLoggedInUser
 {
@@ -164,7 +167,8 @@
         
         [self presentViewController:logInViewController animated:YES completion:NULL];
     } else {
-        self.currentUser = [PFUser currentUser];
+        self.dataStore.currentUser = [PFUser currentUser];
+        [self checkIfUserSelectedUniversity];
     }
 }
 
@@ -185,10 +189,21 @@
     return NO; // Interrupt login process
 }
 
+- (void)checkIfUserSelectedUniversity
+{
+    if (![self.dataStore.currentUser[@"universityPointer"] boolValue])
+    {
+        BBUniversityPickerViewController *universityPickerVC = [self.storyboard instantiateViewControllerWithIdentifier:@"pickUniversityController"];
+        
+        [self.navigationController pushViewController:universityPickerVC animated:YES];
+    }
+}
+
 // Sent to the delegate when a PFUser is logged in.
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user
 {
-    self.currentUser = user;
+    self.dataStore.currentUser = user;
+    [self checkIfUserSelectedUniversity];
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
@@ -232,6 +247,7 @@
 // Sent to the delegate when a PFUser is signed up.
 - (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user
 {
+    [self checkIfUserSelectedUniversity];
     [self dismissViewControllerAnimated:YES completion:nil]; // Dismiss the PFSignUpViewController
 }
 
@@ -262,12 +278,19 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"settingsSegue"]) {
-        BBSettingsAndOptionsTableViewController *nextVC = segue.destinationViewController;
-        
-        nextVC.currentUser = self.currentUser;
-        
-    }
-    
+    BBSettingsAndOptionsTableViewController *nextVC = segue.destinationViewController;
+//    if (![self.dataStore.currentUser[@"universityPointer"] boolValue])
+//    {
+//        BBUniversityPickerViewController *universityPickerVC = [self.storyboard instantiateViewControllerWithIdentifier:@"pickUniversityController"];
+//        
+//        [self presentViewController:universityPickerVC animated:YES completion:nil];
+//    }
+   
+        if ([segue.identifier isEqualToString:@"settingsSegue"]) {
+            
+            nextVC.currentUser = self.dataStore.currentUser;
+            
+        }
+
 }
 @end
