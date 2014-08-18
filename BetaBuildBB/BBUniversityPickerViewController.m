@@ -84,7 +84,8 @@ numberOfRowsInComponent:(NSInteger)component
 {
     [self.dataStore.currentUser setObject:self.dataStore.selectedUniversity.objectId forKey:@"universityPointer"];
     [self.dataStore.currentUser setObject:[NSNumber numberWithBool:YES] forKey:@"pickedUniversity"];
-    [self.dataStore.currentUser saveInBackground];
+    [self.dataStore.currentUser save];
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 @end

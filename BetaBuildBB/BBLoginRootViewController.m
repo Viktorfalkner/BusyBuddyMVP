@@ -78,9 +78,6 @@
     self.navigationController.navigationBar.titleTextAttributes = textAttributes;
     self.title = @"BusyBuddy";
     
-
-    
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -123,8 +120,6 @@
     
     
     [self.mapOutlet setRegion:region animated:YES];
-    
-    
 }
 
 -(void)plotLocationsOnMap:(BBMeetup *)meetUpToBePlotted
@@ -138,7 +133,6 @@
     pointToAnnotate.title = meetUpToBePlotted.meetupName;
     
     [self.mapOutlet addAnnotation:pointToAnnotate];
-
 }
 
 
