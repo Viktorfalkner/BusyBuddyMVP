@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>8A42A603-199E-4FD3-9A38-B3A096753D02</string>
+	<string>8EBACB84-28FC-4FCA-8B06-F784D82A0C76</string>
 	<key>IDESourceControlProjectName</key>
 	<string>BetaBuildBB</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>55242735-D1E8-48CD-B65D-8764FE16711D</key>
-		<string>https://github.com/Viktorfalkner/ParseLogin-DrawerController-Foundation.git</string>
+		<key>3680E43D-EED9-42CB-AB29-4A84B338E881</key>
+		<string>https://github.com/Viktorfalkner/BusyBuddyMVP.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>BetaBuildBB.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>55242735-D1E8-48CD-B65D-8764FE16711D</key>
+		<key>3680E43D-EED9-42CB-AB29-4A84B338E881</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/Viktorfalkner/ParseLogin-DrawerController-Foundation.git</string>
+	<string>https://github.com/Viktorfalkner/BusyBuddyMVP.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>55242735-D1E8-48CD-B65D-8764FE16711D</string>
+	<string>3680E43D-EED9-42CB-AB29-4A84B338E881</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>55242735-D1E8-48CD-B65D-8764FE16711D</string>
+			<string>3680E43D-EED9-42CB-AB29-4A84B338E881</string>
 			<key>IDESourceControlWCCName</key>
-			<string>ParseLogin-DrawerController-Foundation</string>
+			<string>BusyBuddyMVP</string>
 		</dict>
 	</array>
 </dict>
