@@ -83,6 +83,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    [self checkForLoggedInUser];
     
     //Left Drawer Button
     self.leftBarButtonItem = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
@@ -101,7 +102,7 @@
 {
     [super viewWillAppear:animated];
     self.currentUser = [PFUser currentUser];
-    [self checkForLoggedInUser];
+   
 
     
 }
@@ -187,6 +188,7 @@
 // Sent to the delegate when a PFUser is logged in.
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user
 {
+    self.currentUser = user;
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
