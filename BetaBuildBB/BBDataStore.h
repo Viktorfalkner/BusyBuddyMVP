@@ -15,8 +15,10 @@
 @interface BBDataStore : NSObject
 
 @property (strong, nonatomic) NSMutableArray *universitiesArray;
-@property (strong, nonatomic) NSMutableArray *universityCoursesArray;
 @property (strong, nonatomic) PFUser *currentUser;
+@property (strong, nonatomic) NSMutableArray *universityCoursesArray;
+@property (strong, nonatomic) BBUniversity *selectedUniversity;
+
 @property (strong, nonatomic) NSMutableArray *allMeetUpsArray;
 @property (strong, nonatomic) BBMeetup *currentUserMeetup;
 
@@ -25,7 +27,6 @@
 +(instancetype)sharedDataStore;
 -(instancetype)init;
 -(void)fetchUniversitiesFromParseWithCompletion:(void (^)(void))universitiesFetched;
--(void)fetchCoursesForUniversity:(BBUniversity *)university
-                       FromParse:(void (^)(void))classesFetched;
+-(void)fetchCoursesForUniversityFromParse:(void (^)(void))classesFetched;
 
 @end

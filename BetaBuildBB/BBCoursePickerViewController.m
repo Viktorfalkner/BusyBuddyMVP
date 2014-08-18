@@ -34,7 +34,7 @@
     self.classPicker.dataSource = self;
     self.classPicker.delegate = self;
     self.dataStore = [BBDataStore sharedDataStore];
-    [self.dataStore fetchCoursesForUniversity:self.selectedUniversity FromParse:^{
+    [self.dataStore fetchCoursesForUniversityFromParse:^{
         [self.classPicker reloadAllComponents];
     }];
 }
