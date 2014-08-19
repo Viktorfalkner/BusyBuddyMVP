@@ -23,7 +23,17 @@
 @property (strong, nonatomic) NSDate *endDate;
 @property (strong, nonatomic) NSArray *classDays;
 
--(instancetype)initWithUniversityPointer:(NSString *)initUniversityPointer WithTitle:(NSString *)initTitle WithProfessor:(NSString *)initProfessor WithCallNumber:(NSNumber *)initCallNumber WithDepartment:(NSString *)initDepartment WithSubject:(NSString *)initSubject WithClassNumber:(NSString *)initClassNumber WithSectionNumber:(NSString *)initSectionNumber WithStartDate:(NSDate *)initStartDate WithEndDate:(NSDate *)initEndDate WithClassDays:(NSArray *)initClassDays;
+- (instancetype)initWithUniversityPointer:(NSString *)initUniversityPointer
+                                WithTitle:(NSString *)initTitle
+                            WithProfessor:(NSString *)initProfessor
+                           WithCallNumber:(NSNumber *)initCallNumber
+                           WithDepartment:(NSString *)initDepartment
+                              WithSubject:(NSString *)initSubject
+                          WithClassNumber:(NSString *)initClassNumber
+                        WithSectionNumber:(NSString *)initSectionNumber
+                            WithStartDate:(NSDate *)initStartDate
+                              WithEndDate:(NSDate *)initEndDate
+                            WithClassDays:(NSArray *)initClassDays;
 
 -(instancetype)initFromDictionary:(NSDictionary *)initDictionary;
 

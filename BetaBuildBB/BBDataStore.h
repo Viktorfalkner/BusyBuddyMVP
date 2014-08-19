@@ -22,7 +22,7 @@
 @property (strong, nonatomic) NSMutableArray *allMeetUpsArray;
 @property (strong, nonatomic) BBMeetup *currentUserMeetup;
 
-
++(void)sendBBMeetupToParse:(BBMeetup *)newMeetup;
 
 +(instancetype)sharedDataStore;
 -(instancetype)init;

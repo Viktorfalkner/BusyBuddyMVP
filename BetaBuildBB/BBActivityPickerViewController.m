@@ -29,6 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     self.meetupActivities = @[@"Homework", @"Mid-Term", @"Final", @"Review"];
     self.activityPicker.dataSource = self;
     self.activityPicker.delegate = self;

@@ -9,6 +9,8 @@
 #import "BBCreateMeetingNowViewController.h"
 #import "BBUniversity.h"
 #import "BBCourse.h"
+#import "BBMeetup.h"
+#import "BBDataStore.h"
 
 @interface BBCreateMeetingNowViewController ()
 
@@ -16,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *courseLabel;
 @property (weak, nonatomic) IBOutlet UITextField *meetupNameTextField;
 - (IBAction)createMeeting:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *locationNameTextField;
 
 @end
 
@@ -34,6 +37,15 @@
 {
     [super viewDidLoad];
     
+    
+    self.locationManager.delegate = self;
+    
+    self.locationManager = [[CLLocationManager alloc]init];
+    
+    [self.locationManager startUpdatingLocation];
+    
+    self.dataStore = [BBDataStore sharedDataStore];
+    
     self.universityLabel.text = self.selectedUniversity.name;
     self.courseLabel.text = self.selectedCourse.title;
 }
@@ -42,6 +54,30 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)makeMeetupWithCompletionBlock:(void(^)(void))completionBlock {
+    // [self.datastore wrapMeetup and Save To Parse]
+    
+    
+    BBMeetup *meetupToStore = [[BBMeetup alloc]init];
+    PFUser *currentUser = [PFUser currentUser];
+    
+    meetupToStore.latitudeNumber = [NSNumber numberWithFloat:self.locationManager.location.coordinate.latitude];
+    meetupToStore.longitudeNumber = [NSNumber numberWithFloat:self.locationManager.location.coordinate.longitude];
+    
+    meetupToStore.meetingName = self.meetupNameTextField.text;
+    meetupToStore.activityType = self.selectedActivity;
+    
+    meetupToStore.beginningTime = [NSDate date];
+    meetupToStore.endTime = [NSDate date];
+    
+    meetupToStore.locationName = self.locationNameTextField.text;
+    meetupToStore.userPointer = currentUser.objectId;
+    meetupToStore.nameOfClass = self.courseLabel.text;
+    
+    [BBDataStore sendBBMeetupToParse:meetupToStore];
+    completionBlock();
 }
 
 /*
@@ -56,6 +92,15 @@
 */
 
 - (IBAction)createMeeting:(id)sender {
+    
+    [self makeMeetupWithCompletionBlock:^{
+        //[self.locationManager stopUpdatingLocation];
+    }];
+    
+
     [self.navigationController popToRootViewControllerAnimated:YES];
+
+
+
 }
 @end

@@ -10,8 +10,12 @@
 
 @class BBUniversity;
 @class BBCourse;
+@class BBDataStore;
 
-@interface BBCreateMeetingNowViewController : UIViewController
+@interface BBCreateMeetingNowViewController : UIViewController <CLLocationManagerDelegate>
+
+@property (strong, nonatomic) CLLocationManager *locationManager;
+@property (strong, nonatomic) BBDataStore *dataStore;
 
 @property (strong, nonatomic) BBUniversity *selectedUniversity;
 @property (strong, nonatomic) BBCourse *selectedCourse;

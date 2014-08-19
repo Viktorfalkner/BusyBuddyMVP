@@ -12,7 +12,17 @@
 
 - (instancetype)init
 {
-    return [self initWithUniversityPointer:@"" WithTitle:@"Aint no classes in here sir/ma'am" WithProfessor:@"" WithCallNumber:@0 WithDepartment:@"" WithSubject:@"" WithClassNumber:@"" WithSectionNumber:@"" WithStartDate:[NSDate date] WithEndDate:[NSDate date] WithClassDays:@[@""]];
+return [self initWithUniversityPointer:@""
+                             WithTitle:@"Aint no classes in here sir/ma'am"
+                         WithProfessor:@""
+                        WithCallNumber:@0
+                        WithDepartment:@""
+                           WithSubject:@""
+                       WithClassNumber:@""
+                     WithSectionNumber:@""
+                         WithStartDate:[NSDate date]
+                           WithEndDate:[NSDate date]
+                         WithClassDays:@[ @"" ]];
 }
 
 -(instancetype)initFromDictionary:(NSDictionary *)initDictionary {
@@ -27,7 +37,18 @@
     NSArray *classDays = initDictionary[@"classDays"];
     NSDate *startDate = initDictionary[@"startDate"];
     NSDate *endDate = initDictionary[@"endDate"];
-    return [self initWithUniversityPointer:universityPointer WithTitle:title WithProfessor:classProfessor WithCallNumber:callNumber WithDepartment:department WithSubject:subject WithClassNumber:classNumber WithSectionNumber:section WithStartDate:startDate WithEndDate:endDate WithClassDays:classDays];
+    
+return [self initWithUniversityPointer:universityPointer
+                             WithTitle:title
+                         WithProfessor:classProfessor
+                        WithCallNumber:callNumber
+                        WithDepartment:department
+                           WithSubject:subject
+                       WithClassNumber:classNumber
+                     WithSectionNumber:section
+                         WithStartDate:startDate
+                           WithEndDate:endDate
+                         WithClassDays:classDays];
     
 }
 

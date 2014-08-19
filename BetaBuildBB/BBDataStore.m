@@ -9,6 +9,7 @@
 #import "BBDataStore.h"
 #import "BBUniversity.h"
 #import "BBCourse.h"
+#import "BBMeetup.h"
 
 @implementation BBDataStore
 
@@ -93,6 +94,34 @@
             NSLog(@"Parse error in datastore: %@", error.localizedDescription);
         }
     }];
+    
+}
+
++(void)sendBBMeetupToParse:(BBMeetup *)newMeetup
+{
+    PFObject *meetupToStore = [PFObject objectWithClassName:@"BBMeetup"];
+    
+    PFUser *currentUser = [PFUser currentUser];
+    
+    
+//    meetupToStore[@"classPointer"] = newMeetup.blank
+    
+    meetupToStore[@"meetingName"] = newMeetup.meetingName;
+//    meetupToStore[@"nameOfClass"] = newMeetup.nameOfClass;
+    meetupToStore[@"latitudeValue"] = newMeetup.latitudeNumber ;
+    meetupToStore[@"longitudeValue"] = newMeetup.longitudeNumber;
+    meetupToStore[@"locationName"] = newMeetup.locationName;
+    meetupToStore[@"userPointer"] = currentUser.objectId;
+    meetupToStore[@"activityType"] = newMeetup.activityType;
+    
+    meetupToStore[@"beginningTime"] = [NSDate date];
+    
+    meetupToStore[@"endTime"] = [[NSDate date] dateByAddingTimeInterval:60*60];
+    
+    meetupToStore[@"locationName"] = newMeetup.locationName;
+
+    
+    [meetupToStore saveInBackground];
     
 }
 

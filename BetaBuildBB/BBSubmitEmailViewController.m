@@ -7,6 +7,7 @@
 //
 
 #import "BBSubmitEmailViewController.h"
+#import "BBMeetup.h"
 
 @interface BBSubmitEmailViewController ()
 
@@ -31,6 +32,8 @@
 {
     [super viewDidLoad];
     
+
+    
     [self.submitEmailTextField becomeFirstResponder];
 }
 
@@ -45,12 +48,15 @@
     PFUser *currentUser = [PFUser currentUser];
     
     [currentUser setObject:self.submitEmailTextField.text forKey:@"email"];
+    
     [currentUser save];
 }
 
 - (IBAction)donePressed:(id)sender
 {
+    
     [self postUserEmailToParse];
+
 //    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 

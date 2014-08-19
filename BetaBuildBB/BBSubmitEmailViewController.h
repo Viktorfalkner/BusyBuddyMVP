@@ -12,6 +12,14 @@
 
 @interface BBSubmitEmailViewController : UIViewController
 
+
+
+@property (strong, nonatomic) BBDataStore *dataStore;
+
+@property (strong, nonatomic) NSNumber *latitudeNumber;
+@property (strong, nonatomic) NSNumber *longitudeNumber;
+
+
 -(void)postUserEmailToParse;
 
 @end
