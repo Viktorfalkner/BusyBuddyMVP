@@ -11,6 +11,7 @@
 @class BBUniversity;
 @class BBMeetup;
 @class BBUser;
+@class BBCourse;
 
 @interface BBDataStore : NSObject
 
@@ -29,6 +30,8 @@
 -(void)fetchUniversitiesFromParseWithCompletion:(void (^)(void))universitiesFetched;
 -(void)fetchCoursesForUniversityFromParse:(void (^)(void))classesFetched;
 
+//Conversion methods 
 +(PFObject *)BBUniversityToPFObject:(BBUniversity *)universityToBeConverted;
++(PFObject *)BBCourseToPFObject:(BBCourse *)courseToBeConverted;
 
 @end

@@ -15,6 +15,8 @@
 
 @property (weak, nonatomic) IBOutlet UIPickerView *classPicker;
 
+- (IBAction)classesSelectedButton:(id)sender;
+
 @end
 
 @implementation BBCoursePickerViewController
@@ -35,6 +37,7 @@
     self.classPicker.delegate = self;
     self.dataStore = [BBDataStore sharedDataStore];
     [self.dataStore fetchCoursesForUniversityFromParse:^{
+        NSLog(@"Courses retrieved");
         [self.classPicker reloadAllComponents];
     }];
 }
@@ -89,4 +92,18 @@ numberOfRowsInComponent:(NSInteger)component
     }
 }
 
+- (IBAction)classesSelectedButton:(id)sender
+{
+    //Setting selected course to university
+    //Later use a for loop to grab all the courses in the array of selected courses (once we implement that implementation)
+    PFObject *studentCourseObject = [BBDataStore BBCourseToPFObject:self.selectedCourse];
+    
+    //Stick the objects in an array (more to come)
+    NSArray *studentCoursesArray = @[studentCourseObject];
+    
+    //Store the course(s) for the current user and save updates
+    PFUser *currentUser = [PFUser currentUser];
+    [currentUser setObject:studentCoursesArray forKey:@"studentCourses"];
+    [currentUser save];
+}
 @end

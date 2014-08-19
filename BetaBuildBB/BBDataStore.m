@@ -70,7 +70,7 @@
     PFObject *userUniversity = [PFObject objectWithClassName:@"University"];
     
     userUniversity[@"name"] = universityToBeConverted.name;
-    userUniversity[@"objectId"] = universityToBeConverted.objectId;
+    userUniversity.objectId = universityToBeConverted.objectId;
     userUniversity[@"location"] = universityToBeConverted.location;
     
     return userUniversity;
@@ -79,8 +79,9 @@
 //Fetch courses for University
 -(void)fetchCoursesForUniversityFromParse:(void (^)(void))classesFetched
 {
+    PFUser *currentUser = [PFUser currentUser];
     PFQuery *queryClasses = [PFQuery queryWithClassName:@"Class"];
-    [queryClasses whereKey:@"universityPointer" containsString:self.selectedUniversity.objectId];
+    [queryClasses whereKey:@"universityPointer" containsString:[currentUser[@"studentUniversity"] objectId]];
     self.universityCoursesArray = [self clearArray];
     [queryClasses findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error)
@@ -105,7 +106,21 @@
             NSLog(@"Parse error in datastore: %@", error.localizedDescription);
         }
     }];
+}
+
++(PFObject *)BBCourseToPFObject:(BBCourse *)courseToBeConverted
+{
+    PFObject *courseAtUniversity = [PFObject objectWithClassName:@"Class"];
     
+    courseAtUniversity[@"name"] = courseToBeConverted.title;
+    courseAtUniversity.objectId = courseToBeConverted.objectId;
+    courseAtUniversity[@"section"] = courseToBeConverted.section;
+    courseAtUniversity[@"professor"] = courseToBeConverted.professor;
+    courseAtUniversity[@"department"] = courseToBeConverted.department;
+    courseAtUniversity[@"subject"] = courseToBeConverted.subject;
+    courseAtUniversity[@"classNumber"] = courseToBeConverted.classNumber;
+    
+    return courseAtUniversity;
 }
 
 -(void)sendBBMeetupToParse:(BBMeetup *)newMeetup

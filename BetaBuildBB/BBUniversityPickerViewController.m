@@ -59,7 +59,7 @@ numberOfRowsInComponent:(NSInteger)component
             forComponent:(NSInteger)component
 {
     BBUniversity *university = self.dataStore.universitiesArray[row];
-    self.dataStore.selectedUniversity = self.dataStore.universitiesArray[row];
+    self.selectedUniversity = self.dataStore.universitiesArray[row];
     return university.name;
 }
 
@@ -68,7 +68,7 @@ numberOfRowsInComponent:(NSInteger)component
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row
       inComponent:(NSInteger)component
 {
-    self.dataStore.selectedUniversity = self.dataStore.universitiesArray[row];
+    self.selectedUniversity = self.dataStore.universitiesArray[row];
 }
 
 #pragma mark - Navigation
@@ -85,9 +85,9 @@ numberOfRowsInComponent:(NSInteger)component
     // convertedPFObject = [selectedUniversity convert];
     // [currentUser setObject:convertedPFObject forKey:@"university"]
     
-    [currentUser setObject:[BBDataStore BBUniversityToPFObject:self.dataStore.selectedUniversity] forKey:@"studentUniversity"];
     [currentUser setObject:[NSNumber numberWithBool:YES] forKey:@"pickedUniversity"];
-    [currentUser saveInBackground];
+    [currentUser setObject:[BBDataStore BBUniversityToPFObject:self.selectedUniversity] forKey:@"studentUniversity"];
+    [currentUser save];
 }
 
 @end

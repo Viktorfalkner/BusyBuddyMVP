@@ -261,6 +261,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="classesSelectedButton:" destination="Mhj-E0-AxU" eventType="touchUpInside" id="bkX-sW-h6u"/>
                                     <segue destination="t8w-Al-SPV" kind="push" id="PSu-4p-Ch9"/>
                                 </connections>
                             </button>

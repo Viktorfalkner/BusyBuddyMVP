@@ -56,6 +56,9 @@
 {
     
     [self postUserEmailToParse];
+    
+    NSArray *coursesForUser = [[PFUser currentUser] objectForKey:@"studentCourses"];
+    NSLog(@"%@", coursesForUser);
 
 //    [self.navigationController popToRootViewControllerAnimated:YES];
 }
