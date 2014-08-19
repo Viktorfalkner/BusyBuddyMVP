@@ -131,7 +131,7 @@
 
 
 #pragma mark - STANDARD PARSE LOGIN METHODS
-- (void) checkForLoggedInUser
+- (void)checkForLoggedInUser
 {
     if (![PFUser currentUser]) {
         
@@ -146,9 +146,6 @@
         logInViewController.signUpController = signUpViewController;
         
         [self presentViewController:logInViewController animated:YES completion:NULL];
-    } else {
-        self.dataStore.currentUser = [PFUser currentUser];
-        [self checkIfUserSelectedUniversity];
     }
 }
 
@@ -171,7 +168,7 @@
 
 - (void)checkIfUserSelectedUniversity
 {
-    if (![self.dataStore.currentUser[@"universityPointer"] boolValue])
+    if (![[PFUser currentUser][@"universityPointer"] boolValue])
     {
         BBUniversityPickerViewController *universityPickerVC = [self.storyboard instantiateViewControllerWithIdentifier:@"pickUniversityController"];
         
@@ -182,8 +179,6 @@
 // Sent to the delegate when a PFUser is logged in.
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user
 {
-    self.dataStore.currentUser = user;
-    [self checkIfUserSelectedUniversity];
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
@@ -197,13 +192,6 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    BBSettingsAndOptionsTableViewController *nextVC = segue.destinationViewController;
-    
-        if ([segue.identifier isEqualToString:@"settingsSegue"]) {
-            
-            nextVC.currentUser = self.dataStore.currentUser;
-            
-        }
 }
 
 @end

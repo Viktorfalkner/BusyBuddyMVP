@@ -39,6 +39,7 @@
 		F83AA35619A03223006B49B6 /* BBCreateMeetingNowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F83AA35519A03223006B49B6 /* BBCreateMeetingNowViewController.m */; };
 		F83AA35919A17275006B49B6 /* BBOnboarding.m in Sources */ = {isa = PBXBuildFile; fileRef = F83AA35819A17275006B49B6 /* BBOnboarding.m */; };
 		F870DB75197C762500E1A779 /* BBRightDrawerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F870DB74197C762500E1A779 /* BBRightDrawerTableViewController.m */; };
+		F87D696F19A2D4E600F69920 /* BBSubmitEmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F87D696E19A2D4E600F69920 /* BBSubmitEmailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,8 @@
 		F83AA35819A17275006B49B6 /* BBOnboarding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBOnboarding.m; sourceTree = "<group>"; };
 		F870DB73197C762500E1A779 /* BBRightDrawerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBRightDrawerTableViewController.h; sourceTree = "<group>"; };
 		F870DB74197C762500E1A779 /* BBRightDrawerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBRightDrawerTableViewController.m; sourceTree = "<group>"; };
+		F87D696D19A2D4E600F69920 /* BBSubmitEmailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBSubmitEmailViewController.h; sourceTree = "<group>"; };
+		F87D696E19A2D4E600F69920 /* BBSubmitEmailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBSubmitEmailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,14 +225,14 @@
 				774C2AEC197C7B9A006DCC87 /* BBLeftDrawerTableViewController.m */,
 				F870DB73197C762500E1A779 /* BBRightDrawerTableViewController.h */,
 				F870DB74197C762500E1A779 /* BBRightDrawerTableViewController.m */,
-				77ACA45C19A00882004865B8 /* BBConstants.h */,
-				77ACA45D19A00882004865B8 /* BBConstants.m */,
 				77ACA46D19A020AF004865B8 /* BBUniversityPickerViewController.h */,
 				77ACA46E19A020AF004865B8 /* BBUniversityPickerViewController.m */,
 				F83AA34519A02731006B49B6 /* BBCoursePickerViewController.h */,
 				F83AA34619A02731006B49B6 /* BBCoursePickerViewController.m */,
 				F83AA35119A02F8A006B49B6 /* BBActivityPickerViewController.h */,
 				F83AA35219A02F8A006B49B6 /* BBActivityPickerViewController.m */,
+				F87D696D19A2D4E600F69920 /* BBSubmitEmailViewController.h */,
+				F87D696E19A2D4E600F69920 /* BBSubmitEmailViewController.m */,
 				F83AA35419A03223006B49B6 /* BBCreateMeetingNowViewController.h */,
 				F83AA35519A03223006B49B6 /* BBCreateMeetingNowViewController.m */,
 				77ACA47219A1586F004865B8 /* BBSettingsAndOptionsTableViewController.h */,
@@ -258,6 +261,8 @@
 				77ACA46319A01D4A004865B8 /* BBMeetup.m */,
 				77ACA46619A01D90004865B8 /* BBUniversity.h */,
 				77ACA46719A01D90004865B8 /* BBUniversity.m */,
+				77ACA45C19A00882004865B8 /* BBConstants.h */,
+				77ACA45D19A00882004865B8 /* BBConstants.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -412,6 +417,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F83AA35919A17275006B49B6 /* BBOnboarding.m in Sources */,
+				F87D696F19A2D4E600F69920 /* BBSubmitEmailViewController.m in Sources */,
 				F870DB75197C762500E1A779 /* BBRightDrawerTableViewController.m in Sources */,
 				77ACA46819A01D90004865B8 /* BBUniversity.m in Sources */,
 				F8206B2C19A1C7CE008BCD6D /* BBLoginRootViewController+parseLoginMethods.m in Sources */,

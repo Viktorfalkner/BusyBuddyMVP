@@ -28,7 +28,6 @@
     if (self) {
         _universitiesArray = [NSMutableArray new];
         _universityCoursesArray = [NSMutableArray new];
-        _currentUser = [PFUser currentUser];
     }
     return self;
 }
@@ -74,7 +73,8 @@
     [queryClasses findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error)
         {
-            if ([objects count] == 0) {
+            if ([objects count] == 0)
+            {
                 BBCourse *emptyCourse = [[BBCourse alloc] init];
                 [self.universityCoursesArray addObject:emptyCourse];
             }

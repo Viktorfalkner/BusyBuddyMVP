@@ -82,11 +82,10 @@ numberOfRowsInComponent:(NSInteger)component
 
 - (IBAction)universityChosenButton:(id)sender
 {
-    [self.dataStore.currentUser setObject:self.dataStore.selectedUniversity.objectId forKey:@"universityPointer"];
-    [self.dataStore.currentUser setObject:[NSNumber numberWithBool:YES] forKey:@"pickedUniversity"];
-    [self.dataStore.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        [self.navigationController popViewControllerAnimated:YES];
-    }];
+    PFUser *currentUser = [PFUser currentUser];
+    [currentUser setObject:self.dataStore.selectedUniversity.objectId forKey:@"universityPointer"];
+    [currentUser setObject:[NSNumber numberWithBool:YES] forKey:@"pickedUniversity"];
+    [currentUser saveInBackground];
 }
 
 @end

@@ -213,6 +213,7 @@
                                 </state>
                                 <connections>
                                     <action selector="universityChosenButton:" destination="fzP-ES-BHf" eventType="touchUpInside" id="xkK-ca-9Zd"/>
+                                    <segue destination="Mhj-E0-AxU" kind="push" id="ASX-da-3Dw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -225,7 +226,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="opf-jG-V3U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2115" y="807"/>
+            <point key="canvasLocation" x="2641" y="807"/>
         </scene>
         <!--Course Picker View Controller-->
         <scene sceneID="BKC-hZ-UTQ">
@@ -256,7 +257,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="av9-vK-tO2" kind="push" identifier="classSelected" id="Uob-MN-pI1"/>
+                                    <segue destination="t8w-Al-SPV" kind="push" id="PSu-4p-Ch9"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -269,7 +270,54 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bqc-Nw-KSh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2775" y="807"/>
+            <point key="canvasLocation" x="3301" y="807"/>
+        </scene>
+        <!--Submit Email View Controller-->
+        <scene sceneID="s1N-rU-3mK">
+            <objects>
+                <viewController id="t8w-Al-SPV" customClass="BBSubmitEmailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LWC-Xs-M1N"/>
+                        <viewControllerLayoutGuide type="bottom" id="0Sp-In-qNF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hVG-sJ-cng">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What's your .edu email address?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5dT-9W-Xi9">
+                                <rect key="frame" x="20" y="167" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="E-mail Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1JL-jJ-K8j">
+                                <rect key="frame" x="99" y="93" width="122" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nkm-vb-jMt">
+                                <rect key="frame" x="142" y="314" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="donePressed:" destination="t8w-Al-SPV" eventType="touchUpInside" id="rCA-fz-Ssq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="DPQ-du-qme"/>
+                    <connections>
+                        <outlet property="submitEmailTextField" destination="5dT-9W-Xi9" id="VwG-Fw-Cx6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g9a-YO-0zP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3811" y="807"/>
         </scene>
         <!--Create Meeting Now View Controller-->
         <scene sceneID="7H2-Zr-el7">
@@ -315,7 +363,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hv3-M8-u9e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3951" y="807"/>
+            <point key="canvasLocation" x="4211" y="13"/>
         </scene>
         <!--Activity Picker View Controller-->
         <scene sceneID="Ltr-fv-ewt">
@@ -359,7 +407,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ma5-NM-qv4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3373" y="807"/>
+            <point key="canvasLocation" x="3633" y="13"/>
         </scene>
         <!--Left Drawer Table View Controller-->
         <scene sceneID="90e-eu-1bd">
@@ -458,6 +506,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PAQ-0j-0Wl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="341" y="1129"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1yz-6o-kVK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qae-hC-lIP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tGZ-o4-zCG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fzP-ES-BHf" kind="relationship" relationship="rootViewController" id="CKn-Bm-Crr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0O9-QY-EWP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2115" y="807"/>
         </scene>
     </scenes>
     <resources>
