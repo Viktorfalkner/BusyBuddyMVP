@@ -15,4 +15,7 @@
 
 @property (strong, nonatomic) BBDataStore *dataStore;
 
+//User selected university
+@property (strong, nonatomic) BBUniversity *selectedUniversity;
+
 @end

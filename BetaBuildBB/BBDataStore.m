@@ -65,6 +65,17 @@
     
 }
 
++(PFObject *)BBUniversityToPFObject:(BBUniversity *)universityToBeConverted
+{
+    PFObject *userUniversity = [PFObject objectWithClassName:@"University"];
+    
+    userUniversity[@"name"] = universityToBeConverted.name;
+    userUniversity[@"objectId"] = universityToBeConverted.objectId;
+    userUniversity[@"location"] = universityToBeConverted.location;
+    
+    return userUniversity;
+}
+
 //Fetch courses for University
 -(void)fetchCoursesForUniversityFromParse:(void (^)(void))classesFetched
 {
@@ -97,7 +108,7 @@
     
 }
 
-+(void)sendBBMeetupToParse:(BBMeetup *)newMeetup
+-(void)sendBBMeetupToParse:(BBMeetup *)newMeetup
 {
     PFObject *meetupToStore = [PFObject objectWithClassName:@"BBMeetup"];
     
@@ -119,8 +130,8 @@
     meetupToStore[@"endTime"] = [[NSDate date] dateByAddingTimeInterval:60*60];
     
     meetupToStore[@"locationName"] = newMeetup.locationName;
+    meetupToStore[@"studentUniversity"] = newMeetup.studentUniversity;
 
-    
     [meetupToStore saveInBackground];
     
 }

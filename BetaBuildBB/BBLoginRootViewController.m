@@ -193,7 +193,8 @@
     [self dismissViewControllerAnimated:YES completion:nil]; // Dismiss the PFSignUpViewController
 }
 
-- (IBAction)makeNewMeetup:(id)sender {
+- (IBAction)makeNewMeetup:(id)sender
+{
         [self checkIfUserSelectedUniversity];
 }
 @end

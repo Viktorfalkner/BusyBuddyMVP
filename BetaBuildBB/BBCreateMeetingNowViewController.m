@@ -74,9 +74,10 @@
     
     meetupToStore.locationName = self.locationNameTextField.text;
     meetupToStore.userPointer = currentUser.objectId;
-    meetupToStore.nameOfClass = self.courseLabel.text;
+    meetupToStore.studentUniversity = self.dataStore.selectedUniversity.name; 
+//    meetupToStore.nameOfClass = self.courseLabel.text;
     
-    [BBDataStore sendBBMeetupToParse:meetupToStore];
+    [self.dataStore sendBBMeetupToParse:meetupToStore];
     completionBlock();
 }
 

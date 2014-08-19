@@ -22,11 +22,13 @@
 @property (strong, nonatomic) NSMutableArray *allMeetUpsArray;
 @property (strong, nonatomic) BBMeetup *currentUserMeetup;
 
-+(void)sendBBMeetupToParse:(BBMeetup *)newMeetup;
+-(void)sendBBMeetupToParse:(BBMeetup *)newMeetup;
 
 +(instancetype)sharedDataStore;
 -(instancetype)init;
 -(void)fetchUniversitiesFromParseWithCompletion:(void (^)(void))universitiesFetched;
 -(void)fetchCoursesForUniversityFromParse:(void (^)(void))classesFetched;
+
++(PFObject *)BBUniversityToPFObject:(BBUniversity *)universityToBeConverted;
 
 @end

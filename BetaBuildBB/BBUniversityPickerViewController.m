@@ -37,8 +37,6 @@
     self.dataStore = [BBDataStore sharedDataStore];
     self.universityPicker.delegate = self;
     self.universityPicker.dataSource = self;
-
-
 }
 
 #pragma mark -
@@ -83,7 +81,11 @@ numberOfRowsInComponent:(NSInteger)component
 - (IBAction)universityChosenButton:(id)sender
 {
     PFUser *currentUser = [PFUser currentUser];
-    [currentUser setObject:self.dataStore.selectedUniversity.objectId forKey:@"universityPointer"];
+    
+    // convertedPFObject = [selectedUniversity convert];
+    // [currentUser setObject:convertedPFObject forKey:@"university"]
+    
+    [currentUser setObject:[BBDataStore BBUniversityToPFObject:self.dataStore.selectedUniversity] forKey:@"studentUniversity"];
     [currentUser setObject:[NSNumber numberWithBool:YES] forKey:@"pickedUniversity"];
     [currentUser saveInBackground];
 }
