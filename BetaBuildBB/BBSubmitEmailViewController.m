@@ -51,7 +51,7 @@
 - (IBAction)donePressed:(id)sender
 {
     [self postUserEmailToParse];
-    [self.navigationController popToRootViewControllerAnimated:YES];
+//    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 @end

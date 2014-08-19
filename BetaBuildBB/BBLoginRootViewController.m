@@ -16,6 +16,7 @@
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapOutlet;
 @property (weak, nonatomic) IBOutlet UITabBar *bottomTabBar;
+- (IBAction)makeNewMeetup:(id)sender;
 
 @end
 
@@ -168,10 +169,14 @@
 
 - (void)checkIfUserSelectedUniversity
 {
-    if (![[PFUser currentUser][@"universityPointer"] boolValue])
+    PFUser *currentUser = [PFUser currentUser];
+    if ([currentUser[@"pickedUniversity"] boolValue])
     {
+        [self performSegueWithIdentifier:@"createMeetup" sender:self];
+    } else {
         BBUniversityPickerViewController *universityPickerVC = [self.storyboard instantiateViewControllerWithIdentifier:@"pickUniversityController"];
         
+        [BBOnboarding firstTimeUserLogin];
         [self.navigationController pushViewController:universityPickerVC animated:YES];
     }
 }
@@ -185,13 +190,10 @@
 // Sent to the delegate when a PFUser is signed up.
 - (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user
 {
-    [BBOnboarding firstTimeUserLogin];
-    [self checkIfUserSelectedUniversity];
     [self dismissViewControllerAnimated:YES completion:nil]; // Dismiss the PFSignUpViewController
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
+- (IBAction)makeNewMeetup:(id)sender {
+        [self checkIfUserSelectedUniversity];
 }
-
 @end

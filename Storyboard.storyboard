@@ -37,6 +37,9 @@
                                 <rect key="frame" x="-3" y="497" width="115" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="meeting-32"/>
+                                <connections>
+                                    <action selector="makeNewMeetup:" destination="M7T-Dm-h6E" eventType="touchUpInside" id="HGb-8d-DBo"/>
+                                </connections>
                             </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WaN-Ro-uOM">
                                 <rect key="frame" x="0.0" y="61" width="320" height="458"/>
@@ -77,6 +80,7 @@
                     <connections>
                         <outlet property="bottomTabBar" destination="yru-5t-ZpU" id="xgS-be-PId"/>
                         <outlet property="mapOutlet" destination="WaN-Ro-uOM" id="L95-Lo-HId"/>
+                        <segue destination="av9-vK-tO2" kind="push" identifier="createMeetup" id="Wzb-IH-q1S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mug-uh-GmA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -181,7 +185,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cmy-rM-qxP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2252" y="-6"/>
+            <point key="canvasLocation" x="2058" y="-535"/>
         </scene>
         <!--University Picker View Controller-->
         <scene sceneID="GaI-Ny-b9Y">
@@ -226,7 +230,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="opf-jG-V3U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2641" y="807"/>
+            <point key="canvasLocation" x="1531" y="1043"/>
         </scene>
         <!--Course Picker View Controller-->
         <scene sceneID="BKC-hZ-UTQ">
@@ -270,7 +274,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bqc-Nw-KSh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3301" y="807"/>
+            <point key="canvasLocation" x="2047" y="1043"/>
         </scene>
         <!--Submit Email View Controller-->
         <scene sceneID="s1N-rU-3mK">
@@ -305,6 +309,7 @@
                                 </state>
                                 <connections>
                                     <action selector="donePressed:" destination="t8w-Al-SPV" eventType="touchUpInside" id="rCA-fz-Ssq"/>
+                                    <segue destination="av9-vK-tO2" kind="push" id="Kog-UR-vM4"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -317,7 +322,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g9a-YO-0zP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3811" y="807"/>
+            <point key="canvasLocation" x="2527" y="1043"/>
         </scene>
         <!--Create Meeting Now View Controller-->
         <scene sceneID="7H2-Zr-el7">
@@ -351,6 +356,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yqc-F1-TKf">
+                                <rect key="frame" x="137" y="269" width="105" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Create Meeting">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="createMeeting:" destination="jwm-qr-7bB" eventType="touchUpInside" id="GUE-XQ-UHs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -363,7 +378,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hv3-M8-u9e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4211" y="13"/>
+            <point key="canvasLocation" x="2627" y="338"/>
         </scene>
         <!--Activity Picker View Controller-->
         <scene sceneID="Ltr-fv-ewt">
@@ -407,7 +422,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ma5-NM-qv4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3633" y="13"/>
+            <point key="canvasLocation" x="2126" y="338"/>
         </scene>
         <!--Left Drawer Table View Controller-->
         <scene sceneID="90e-eu-1bd">
@@ -523,7 +538,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0O9-QY-EWP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2115" y="807"/>
+            <point key="canvasLocation" x="769" y="1067"/>
         </scene>
     </scenes>
     <resources>
@@ -536,4 +551,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="Wzb-IH-q1S"/>
+    </inferredMetricsTieBreakers>
 </document>

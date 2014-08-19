@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>8EBACB84-28FC-4FCA-8B06-F784D82A0C76</string>
+	<string>D98A0E80-96E7-40F3-BC62-87F7659F91F3</string>
 	<key>IDESourceControlProjectName</key>
 	<string>BetaBuildBB</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>3680E43D-EED9-42CB-AB29-4A84B338E881</key>
-		<string>https://github.com/Viktorfalkner/BusyBuddyMVP.git</string>
+		<key>41614C6F-403A-4464-B369-76D88137A340</key>
+		<string>https://github.com/Viktorfalkner/BusyBuddyMVP</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>BetaBuildBB.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>3680E43D-EED9-42CB-AB29-4A84B338E881</key>
+		<key>41614C6F-403A-4464-B369-76D88137A340</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/Viktorfalkner/BusyBuddyMVP.git</string>
+	<string>https://github.com/Viktorfalkner/BusyBuddyMVP</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>3680E43D-EED9-42CB-AB29-4A84B338E881</string>
+	<string>41614C6F-403A-4464-B369-76D88137A340</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>3680E43D-EED9-42CB-AB29-4A84B338E881</string>
+			<string>41614C6F-403A-4464-B369-76D88137A340</string>
 			<key>IDESourceControlWCCName</key>
 			<string>BusyBuddyMVP</string>
 		</dict>

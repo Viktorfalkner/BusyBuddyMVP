@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *universityLabel;
 @property (weak, nonatomic) IBOutlet UILabel *courseLabel;
 @property (weak, nonatomic) IBOutlet UITextField *meetupNameTextField;
+- (IBAction)createMeeting:(id)sender;
 
 @end
 
@@ -54,4 +55,7 @@
 }
 */
 
+- (IBAction)createMeeting:(id)sender {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
 @end
