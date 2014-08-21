@@ -87,7 +87,6 @@ numberOfRowsInComponent:(NSInteger)component
 {
     BBActivityPickerViewController *nextVC = segue.destinationViewController;
     if ([segue.identifier isEqualToString:@"classSelected"]) {
-        nextVC.selectedUniversity = self.selectedUniversity;
         nextVC.selectedCourse = self.selectedCourse;
     }
 }
@@ -106,4 +105,5 @@ numberOfRowsInComponent:(NSInteger)component
     [currentUser setObject:studentCoursesArray forKey:@"studentCourses"];
     [currentUser save];
 }
+
 @end

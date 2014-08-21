@@ -31,9 +31,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
 
-    
     [self.submitEmailTextField becomeFirstResponder];
 }
 
@@ -54,13 +52,7 @@
 
 - (IBAction)donePressed:(id)sender
 {
-    
     [self postUserEmailToParse];
-    
-    NSArray *coursesForUser = [[PFUser currentUser] objectForKey:@"studentCourses"];
-    NSLog(@"%@", coursesForUser);
-
-//    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 @end

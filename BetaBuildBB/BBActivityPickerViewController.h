@@ -18,7 +18,4 @@
 @property (strong, nonatomic) NSString *selectedActivity;
 @property (strong, nonatomic) NSArray *meetupActivities;
 
-
-
-
 @end

@@ -34,7 +34,6 @@
     self.activityPicker.dataSource = self;
     self.activityPicker.delegate = self;
     
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
@@ -80,9 +79,8 @@ numberOfRowsInComponent:(NSInteger)component
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     BBCreateMeetingNowViewController *nextVC = segue.destinationViewController;
-    if ([segue.identifier isEqualToString:@"activitySelected"]) {
-        nextVC.selectedUniversity = self.selectedUniversity;
-        nextVC.selectedCourse = self.selectedCourse;
+    if ([segue.identifier isEqualToString:@"activitySelected"])
+    {
         nextVC.selectedActivity = self.selectedActivity;
     }
 }

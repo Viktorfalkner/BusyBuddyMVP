@@ -70,6 +70,7 @@
     PFObject *userUniversity = [PFObject objectWithClassName:@"University"];
     
     userUniversity[@"name"] = universityToBeConverted.name;
+    //Is objectId property necessary for BBUniversity?
     userUniversity.objectId = universityToBeConverted.objectId;
     userUniversity[@"location"] = universityToBeConverted.location;
     
@@ -110,15 +111,15 @@
 
 +(PFObject *)BBCourseToPFObject:(BBCourse *)courseToBeConverted
 {
-    PFObject *courseAtUniversity = [PFObject objectWithClassName:@"Class"];
+    PFObject *courseAtUniversity = [PFObject objectWithClassName:@"UserClasses"];
     
-    courseAtUniversity[@"name"] = courseToBeConverted.title;
-    courseAtUniversity.objectId = courseToBeConverted.objectId;
+    courseAtUniversity[@"classTitle"] = courseToBeConverted.title;
+    //Not sure if objectId property is necessary on BBCourse
+//    courseAtUniversity.objectId = courseToBeConverted.objectId;
     courseAtUniversity[@"section"] = courseToBeConverted.section;
-    courseAtUniversity[@"professor"] = courseToBeConverted.professor;
+    courseAtUniversity[@"classProfessor"] = courseToBeConverted.professor;
     courseAtUniversity[@"department"] = courseToBeConverted.department;
     courseAtUniversity[@"subject"] = courseToBeConverted.subject;
-    courseAtUniversity[@"classNumber"] = courseToBeConverted.classNumber;
     
     return courseAtUniversity;
 }
