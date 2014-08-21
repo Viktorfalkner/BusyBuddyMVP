@@ -21,4 +21,6 @@
 @property (strong, nonatomic) BBCourse *selectedCourse;
 @property (strong, nonatomic) NSString *selectedActivity;
 
+-(void)setRelationshipPropertiesForUIDisplay;
+
 @end

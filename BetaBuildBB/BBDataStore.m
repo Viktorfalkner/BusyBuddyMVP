@@ -149,7 +149,46 @@
     meetupToStore[@"studentUniversity"] = newMeetup.studentUniversity;
 
     [meetupToStore saveInBackground];
+}
+
++(BBUniversity *)parseStudentUniversityToBBUniversity
+{
+    PFUser *currentUser = [PFUser currentUser];
     
+    //Check to attain all university data
+    PFObject *currentStudentUniversityParse = [currentUser[@"studentUniversity"] fetchIfNeeded];
+    
+    BBUniversity *universityUpToDisplay = [[BBUniversity alloc] init];
+    universityUpToDisplay.objectId = currentStudentUniversityParse.objectId;
+    universityUpToDisplay.name = currentStudentUniversityParse[@"name"];
+    universityUpToDisplay.location = currentStudentUniversityParse[@"location"];
+    
+    return universityUpToDisplay;
+}
+
++(BBCourse *)parseStudentCourseToBBCourse
+{
+    //Fetch array of courses and iterate through
+    PFUser *currentUser = [PFUser currentUser];
+    NSArray *studentCoursesInParse = [currentUser objectForKey:@"studentCourses"];
+    
+    //Create and set properties for BBCourse object
+    BBCourse *studentCourse = [[BBCourse alloc] init];
+    
+    //For now, only have to parse one object in Parse
+    for (PFObject *studentCourseObject in studentCoursesInParse)
+    {
+        //Make sure all the data is attained properly
+        [studentCourseObject fetchIfNeeded];
+        //Just some of the properties
+        studentCourse.title = studentCourseObject[@"classTitle"];
+        studentCourse.professor = studentCourseObject[@"classProfessor"];
+        studentCourse.objectId = studentCourseObject.objectId;
+        studentCourse.section = studentCourseObject[@"section"];
+    }
+
+    //Later will return NSArray of BBCourses 
+    return studentCourse;
 }
 
 @end

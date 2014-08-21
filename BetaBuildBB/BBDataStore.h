@@ -33,5 +33,7 @@
 //Conversion methods 
 +(PFObject *)BBUniversityToPFObject:(BBUniversity *)universityToBeConverted;
 +(PFObject *)BBCourseToPFObject:(BBCourse *)courseToBeConverted;
++(BBUniversity *)parseStudentUniversityToBBUniversity;
++(BBCourse *)parseStudentCourseToBBCourse;
 
 @end

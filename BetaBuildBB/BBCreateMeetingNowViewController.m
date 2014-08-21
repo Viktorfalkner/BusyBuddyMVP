@@ -37,15 +37,15 @@
 {
     [super viewDidLoad];
     
-    
-    self.locationManager.delegate = self;
-    
+    //CLLocationManager setup
     self.locationManager = [[CLLocationManager alloc]init];
-    
+    self.locationManager.delegate = self;
     [self.locationManager startUpdatingLocation];
     
     self.dataStore = [BBDataStore sharedDataStore];
     
+    //Set UI
+    [self setRelationshipPropertiesForUIDisplay];
     self.universityLabel.text = self.selectedUniversity.name;
     self.courseLabel.text = self.selectedCourse.title;
 }
@@ -58,8 +58,6 @@
 
 - (void)makeMeetupWithCompletionBlock:(void(^)(void))completionBlock {
     // [self.datastore wrapMeetup and Save To Parse]
-    
-    
     BBMeetup *meetupToStore = [[BBMeetup alloc]init];
     PFUser *currentUser = [PFUser currentUser];
     
@@ -74,8 +72,7 @@
     
     meetupToStore.locationName = self.locationNameTextField.text;
     meetupToStore.userPointer = currentUser.objectId;
-    meetupToStore.studentUniversity = self.dataStore.selectedUniversity.name; 
-//    meetupToStore.nameOfClass = self.courseLabel.text;
+    meetupToStore.studentUniversity = self.dataStore.selectedUniversity.name;
     
     [self.dataStore sendBBMeetupToParse:meetupToStore];
     completionBlock();
@@ -92,16 +89,19 @@
 }
 */
 
-- (IBAction)createMeeting:(id)sender {
-    
+-(void)setRelationshipPropertiesForUIDisplay
+{
+    self.selectedUniversity = [BBDataStore parseStudentUniversityToBBUniversity];
+    self.selectedCourse = [BBDataStore parseStudentCourseToBBCourse];
+}
+
+- (IBAction)createMeeting:(id)sender
+{
     [self makeMeetupWithCompletionBlock:^{
         //[self.locationManager stopUpdatingLocation];
     }];
     
 
     [self.navigationController popToRootViewControllerAnimated:YES];
-
-
-
 }
 @end
